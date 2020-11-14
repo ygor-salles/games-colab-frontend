@@ -17,6 +17,8 @@ export class GameCreateComponent implements OnInit {
     genre: ''
   }
 
+  genres = ['Ação', 'Aventura', 'Estratégia', 'RPG', 'Esporte', 'Simulação']
+
   constructor(private gameService: GameService, private router: Router) { }
 
   ngOnInit(): void {

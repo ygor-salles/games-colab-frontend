@@ -14,8 +14,14 @@
                 [(ngModel)]="game.developer" name="developer">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Gênero"
-                [(ngModel)]="game.genre" name="genre">
+            <mat-label>Gênero</mat-label>
+            <mat-select [(ngModel)]="game.genre" name="genre">
+                <mat-option *ngFor="let genre of genres" [value]="genre">
+                    {{ genre }}
+                </mat-option>
+            </mat-select>
+            <!--<input matInput placeholder="Gênero"
+                [(ngModel)]="game.genre" name="genre">-->
         </mat-form-field>
     </form>
     <button mat-raised-button (click)="updateGame()" color="primary">

@@ -10,6 +10,7 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class GameUpdateComponent implements OnInit {
   game: Game;
+  genres = ['Ação', 'Aventura', 'Estratégia', 'RPG', 'Esporte', 'Simulação']
 
   constructor(
     private gameService: GameService,

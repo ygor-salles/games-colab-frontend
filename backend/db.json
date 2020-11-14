@@ -4,21 +4,21 @@
       "title": "God of War",
       "summary": "God of War é uma série de jogos eletrônicos de ação-aventura vagamente baseado nas mitologias grega e nórdica sendo criado originalmente por David Jaffe da Santa Monica Studio. Iniciada em 2005, a série tornou-se carro-chefe para a marca PlayStation, que consiste em oito jogos em várias plataformas.",
       "developer": "Santa Monica",
-      "genre": "Hack and slash",
+      "genre": "RPG",
       "id": 1
     },
     {
       "title": "The last of Us",
       "summary": "The Last of Us é uma franquia de jogos eletrônicos de ação-aventura e survival horror exclusiva da PlayStation, criada por Neil Druckmann. A franquia é situada em um mundo pós-apocalíptico, com seres humanos hostis e criaturas canibalísticas infectadas por uma mutação do fungo Cordyceps.",
       "developer": "Naughty Dog",
-      "genre": "Survival Horror",
+      "genre": "Ação",
       "id": 2
     },
     {
       "title": "Uncharted",
       "summary": "Uncharted é uma série de videojogos de ação-aventura produzida pela Naughty Dog e publicada pela Sony Computer Entertainment para as plataformas PlayStation.",
       "developer": "Naughty Dog",
-      "genre": "Ação e Aventura, tiro em terceira pessoa",
+      "genre": "Aventura",
       "id": 3
     }
   ],
