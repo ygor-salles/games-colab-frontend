@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { GamesCrudComponent } from './views/games-crud/games-crud.component';
-
+import { GameDeleteComponent } from './components/game/game-delete/game-delete.component';
 
 const routes: Routes = [
   {
@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: "games/read",
     component: GameReadComponent
-  }
+  },
+  {
+    path: "games/delete",
+    component: GameDeleteComponent
+  },
 ];
 
 @NgModule({

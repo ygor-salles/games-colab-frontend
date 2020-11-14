@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //Componentes Criados
 import { HeaderComponent } from './components/template/header/header.component';
@@ -31,6 +32,8 @@ import { GamesCrudComponent } from './views/games-crud/games-crud.component';
 import { GameCreateComponent } from './components/game/game-create/game-create.component';
 import { LOCALE_ID } from '@angular/core';
 import { GameReadComponent } from './components/game/game-read/game-read.component';
+import { GameDeleteComponent } from './components/game/game-delete/game-delete.component';
+import { DialogComponent } from './services/dialog/dialog.component';
 
 registerLocaleData(localePt);
 
@@ -43,7 +46,9 @@ registerLocaleData(localePt);
     HomeComponent,
     GamesCrudComponent,
     GameCreateComponent,
-    GameReadComponent
+    GameReadComponent,
+    GameDeleteComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,8 @@ registerLocaleData(localePt);
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [{
     provide: LOCALE_ID,

@@ -1,31 +1,26 @@
 import { GameService } from './../../../services/game.service';
 import { Game } from './../../../models/game.model';
-import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-game-read',
   templateUrl: './game-read.component.html',
   styleUrls: ['./game-read.component.css']
 })
-export class GameReadComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'title', 'summary', 'developer', 'genre'];
-  dataSource: MatTableDataSource<Game>
+export class GameReadComponent implements OnInit {
+
+  games: Game[]
+  displayedColumns = ['id', 'title', 'summary', 'developer', 'genre', 'action'];
   
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  
-  constructor(private gameService: GameService) {}
-  
-  ngAfterViewInit() {
-    this.gameService.read().subscribe(game => this.ELEMENT_DATA = game)
-    console.log(this.ELEMENT_DATA)
-    this.dataSource = new MatTableDataSource<Game>(this.ELEMENT_DATA);
-    this.dataSource.paginator = this.paginator;
+  constructor(private gameService: GameService) { }
+
+  ngOnInit(): void {
+    this.gameService.read().subscribe(games => {
+      this.games = games
+    })
   }
-  
-  teste() {
-    this.ELEMENT_DATA.forEach(game => console.log(game))
+
+  openDialog(event: string) {
+    this.gameService.openDialog(event)
   }
-  ELEMENT_DATA: Game[]
 }
