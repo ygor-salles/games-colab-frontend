@@ -1,3 +1,7 @@
+import { UserReadComponent } from './components/user/user-read/user-read.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
+import { UsersCrudComponent } from './views/users-crud/users-crud.component';
+import { GameUpdateComponent } from './components/game/game-update/game-update.component';
 import { GameReadComponent } from './components/game/game-read/game-read.component';
 import { GameCreateComponent } from './components/game/game-create/game-create.component';
 import { NgModule } from '@angular/core';
@@ -24,9 +28,25 @@ const routes: Routes = [
     component: GameReadComponent
   },
   {
-    path: "games/delete",
+    path: "games/delete/:id",
     component: GameDeleteComponent
   },
+  {
+    path: "games/update/:id",
+    component: GameUpdateComponent
+  },
+  {
+    path: "users",
+    component: UsersCrudComponent
+  },
+  {
+    path: "users/create",
+    component: UserCreateComponent
+  },
+  {
+    path: "users/read",
+    component: UserReadComponent
+  }
 ];
 
 @NgModule({

@@ -1,25 +1,25 @@
 <mat-card>
-    <mat-card-title>Excluir Produto</mat-card-title>
+    <mat-card-title>Alterar Jogo</mat-card-title>
     <form>
         <mat-form-field>
             <input matInput placeholder="Titulo"
-                [value]="game.title" name="title" disabled>
+                [(ngModel)]="game.title" name="title">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Resumo</mat-label>
-            <textarea matInput [(ngModel)]="game.summary" name="summary" disabled></textarea>
+            <textarea matInput [(ngModel)]="game.summary" name="summary"></textarea>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Desenvolvedor"
-                [value]="game.developer" name="developer" disabled>
+                [(ngModel)]="game.developer" name="developer">
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Gênero"
-                [value]="game.genre" name="genre" disabled>
+                [(ngModel)]="game.genre" name="genre">
         </mat-form-field>
     </form>
-    <button mat-raised-button (click)="deleteGame()" color="warn">
-        Excluir
+    <button mat-raised-button (click)="updateGame()" color="primary">
+        Atualizar
     </button>
     
     <button mat-raised-button (click)="cancel()">

@@ -1,5 +1,4 @@
-import { GameService } from './../../services/game.service';
-import { Route } from '@angular/compiler/src/core';
+import { HeaderService } from './../../components/template/header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,7 +9,13 @@ import { Router } from '@angular/router';
 })
 export class GamesCrudComponent implements OnInit {
 
-  constructor(private router: Router, private gameService: GameService) { }
+  constructor(private router: Router, private headerService: HeaderService) { 
+    headerService.headerData = {
+      title: 'Cadastro de Games',
+      icon: 'sports_esports',
+      routeUrl: '/games'
+    }
+   }
 
   ngOnInit(): void {
   }

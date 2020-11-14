@@ -21,6 +21,12 @@
       "name": "Pedro Silva",
       "password": "123456",
       "id": 1
+    },
+    {
+      "email": "ygor@unifei.edu.br",
+      "name": "Ygor Salles",
+      "password": "123456",
+      "id": 2
     }
   ]
 }

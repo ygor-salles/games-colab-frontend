@@ -34,6 +34,10 @@ import { LOCALE_ID } from '@angular/core';
 import { GameReadComponent } from './components/game/game-read/game-read.component';
 import { GameDeleteComponent } from './components/game/game-delete/game-delete.component';
 import { DialogComponent } from './services/dialog/dialog.component';
+import { GameUpdateComponent } from './components/game/game-update/game-update.component';
+import { UsersCrudComponent } from './views/users-crud/users-crud.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
+import { UserReadComponent } from './components/user/user-read/user-read.component';
 
 registerLocaleData(localePt);
 
@@ -48,7 +52,11 @@ registerLocaleData(localePt);
     GameCreateComponent,
     GameReadComponent,
     GameDeleteComponent,
-    DialogComponent
+    DialogComponent,
+    GameUpdateComponent,
+    UsersCrudComponent,
+    UserCreateComponent,
+    UserReadComponent
   ],
   imports: [
     BrowserModule,

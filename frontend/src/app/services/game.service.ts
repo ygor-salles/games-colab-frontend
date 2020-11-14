@@ -30,8 +30,8 @@ export class GameService {
     this.dialog.open(DialogComponent, {data: {summary: summaryCapture}})
   }
 
-  create(product: Game): Observable<Game> {
-    return this.http.post<Game>(this.baseUrl, product).pipe(
+  create(game: Game): Observable<Game> {
+    return this.http.post<Game>(this.baseUrl, game).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
@@ -52,9 +52,9 @@ export class GameService {
     );
   }
 
-  update(product: Game): Observable<Game> {
-    const url = `${this.baseUrl}/${product.id}`;
-    return this.http.put<Game>(url, product).pipe(
+  update(game: Game): Observable<Game> {
+    const url = `${this.baseUrl}/${game.id}`;
+    return this.http.put<Game>(url, game).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
