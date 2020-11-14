@@ -1,19 +1,26 @@
 {
-    "games": [
-        {
-            "title": "God of War",
-            "summary": "God of War é uma série de jogos eletrônicos de ação-aventura vagamente baseado nas mitologias grega e nórdica sendo criado originalmente por David Jaffe da Santa Monica Studio. Iniciada em 2005, a série tornou-se carro-chefe para a marca PlayStation, que consiste em oito jogos em várias plataformas",
-            "devoloper": "Santa Monica",
-            "genre": "Hack and slash",
-            "id": 1
-        }
-    ],
-    "users": [
-        {
-            "email": "pedro@gmail.com",
-            "name": "Pedro Silva",
-            "password": "123456",
-            "id": 1
-        }
-    ]
+  "games": [
+    {
+      "title": "God of War",
+      "summary": "God of War",
+      "devoloper": "Santa Monica",
+      "genre": "Hack and slash",
+      "id": 1
+    },
+    {
+      "title": "The last of Us",
+      "summary": "The Last of Us",
+      "developer": "Naughty Dog",
+      "genre": "Ação aventura, Survival Horror",
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "email": "pedro@gmail.com",
+      "name": "Pedro Silva",
+      "password": "123456",
+      "id": 1
+    }
+  ]
 }
