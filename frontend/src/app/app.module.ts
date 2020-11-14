@@ -38,6 +38,8 @@ import { GameUpdateComponent } from './components/game/game-update/game-update.c
 import { UsersCrudComponent } from './views/users-crud/users-crud.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UserReadComponent } from './components/user/user-read/user-read.component';
+import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
+import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 
 registerLocaleData(localePt);
 
@@ -56,7 +58,9 @@ registerLocaleData(localePt);
     GameUpdateComponent,
     UsersCrudComponent,
     UserCreateComponent,
-    UserReadComponent
+    UserReadComponent,
+    UserDeleteComponent,
+    UserUpdateComponent
   ],
   imports: [
     BrowserModule,

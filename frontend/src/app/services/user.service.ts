@@ -32,7 +32,7 @@ export class UserService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage('Ococrreu um erro!', true)
+    this.showMessage('Ocorreu um erro!', true)
     return EMPTY
   }
 

@@ -13,12 +13,19 @@
       "developer": "Naughty Dog",
       "genre": "Survival Horror",
       "id": 2
+    },
+    {
+      "title": "Uncharted",
+      "summary": "Uncharted é uma série de videojogos de ação-aventura produzida pela Naughty Dog e publicada pela Sony Computer Entertainment para as plataformas PlayStation.",
+      "developer": "Naughty Dog",
+      "genre": "Ação e Aventura, tiro em terceira pessoa",
+      "id": 3
     }
   ],
   "users": [
     {
       "email": "pedro@gmail.com",
-      "name": "Pedro Silva",
+      "name": "Pedro Silva Souza",
       "password": "123456",
       "id": 1
     },

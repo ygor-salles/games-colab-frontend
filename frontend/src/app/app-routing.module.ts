@@ -1,3 +1,5 @@
+import { UserUpdateComponent } from './components/user/user-update/user-update.component';
+import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
 import { UserReadComponent } from './components/user/user-read/user-read.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UsersCrudComponent } from './views/users-crud/users-crud.component';
@@ -46,6 +48,14 @@ const routes: Routes = [
   {
     path: "users/read",
     component: UserReadComponent
+  },
+  {
+    path: "users/delete/:id",
+    component: UserDeleteComponent
+  },
+  {
+    path: "users/update/:id",
+    component: UserUpdateComponent
   }
 ];
 
