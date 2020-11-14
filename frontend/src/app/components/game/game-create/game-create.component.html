@@ -6,8 +6,8 @@
                 [(ngModel)]="game.title" name="title">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Resumo"
-                [(ngModel)]="game.summary" name="summary">
+            <mat-label>Resumo</mat-label>
+            <textarea matInput [(ngModel)]="game.summary" name="summary"></textarea>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Desenvolvedor"

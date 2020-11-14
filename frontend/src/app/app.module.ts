@@ -30,6 +30,7 @@ import { HomeComponent } from './views/home/home.component';
 import { GamesCrudComponent } from './views/games-crud/games-crud.component';
 import { GameCreateComponent } from './components/game/game-create/game-create.component';
 import { LOCALE_ID } from '@angular/core';
+import { GameReadComponent } from './components/game/game-read/game-read.component';
 
 registerLocaleData(localePt);
 
@@ -41,7 +42,8 @@ registerLocaleData(localePt);
     NavComponent,
     HomeComponent,
     GamesCrudComponent,
-    GameCreateComponent
+    GameCreateComponent,
+    GameReadComponent
   ],
   imports: [
     BrowserModule,
