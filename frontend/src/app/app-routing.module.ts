@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login/login.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
 import { UserReadComponent } from './components/user/user-read/user-read.component';
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: "users/update/:id",
     component: UserUpdateComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
   }
 ];
 

@@ -1,3 +1,4 @@
+import { AppComponent } from './../../../app.component';
 import { Router } from '@angular/router';
 import { HeaderService } from './header.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private headerService: HeaderService, private router: Router) { }
+  constructor(
+    private headerService: HeaderService, 
+    private router: Router, 
+    private appComponent: AppComponent
+  ) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +33,11 @@ export class HeaderComponent implements OnInit {
 
   registrar() {
     this.router.navigate(['users/create'])
+  }
+
+  autenticar() {
+    this.appComponent.mostrarMenu = false
+    this.router.navigate(['login'])
   }
 
 }

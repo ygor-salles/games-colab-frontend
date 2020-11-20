@@ -43,6 +43,8 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
 import { UserReadComponent } from './components/user/user-read/user-read.component';
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
+import { LoginComponent } from './login/login/login.component';
+
 
 
 registerLocaleData(localePt);
@@ -64,7 +66,8 @@ registerLocaleData(localePt);
     UserCreateComponent,
     UserReadComponent,
     UserDeleteComponent,
-    UserUpdateComponent
+    UserUpdateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -88,10 +91,12 @@ registerLocaleData(localePt);
     MatMenuModule,
     MatIconModule
   ],
-  providers: [{
+  providers: [
+    {
     provide: LOCALE_ID,
     useValue: 'pt-BR'
-  }],
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

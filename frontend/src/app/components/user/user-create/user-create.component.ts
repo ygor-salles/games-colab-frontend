@@ -27,7 +27,8 @@ export class UserCreateComponent implements OnInit {
   }
 
   createUser(): void {
-    if(this.senha1 === this.senha2){
+    if(this.senha1 == this.senha2){
+      this.user.password = this.senha1
       this.userService.create(this.user).subscribe(() => {
         this.userService.showMessage('Usuário cadastrado com sucesso')
         this.router.navigate(['users'])

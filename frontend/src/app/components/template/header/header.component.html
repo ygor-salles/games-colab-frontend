@@ -18,7 +18,7 @@
             <mat-icon>login</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Fazer login</button>
+            <button mat-menu-item (click)="autenticar()">Fazer login</button>
             <button mat-menu-item (click)="registrar()">Registrar</button>
         </mat-menu>
     </div>
