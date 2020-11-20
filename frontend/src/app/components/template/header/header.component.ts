@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HeaderService } from './header.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private headerService: HeaderService) { }
+  constructor(private headerService: HeaderService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +24,10 @@ export class HeaderComponent implements OnInit {
 
   get routeUrl(): string {
     return this.headerService.headerData.routeUrl
+  }
+
+  registrar() {
+    this.router.navigate(['users/create'])
   }
 
 }

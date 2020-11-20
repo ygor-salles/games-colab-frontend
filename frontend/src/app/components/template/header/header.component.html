@@ -8,8 +8,19 @@
         <a>
             <i class="material-icons">
                 {{ icon }}
-            </i>
+            </i> 
             {{ title }}
         </a>
     </span>
-</mat-toolbar>
+    <span class="example-spacer"></span>
+    <div class="cadastro">
+        <button mat-icon-button class="example-icon person-icon" [matMenuTriggerFor]="menu">
+            <mat-icon>login</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Fazer login</button>
+            <button mat-menu-item (click)="registrar()">Registrar</button>
+        </mat-menu>
+    </div>
+    <span>Login</span>
+  </mat-toolbar>

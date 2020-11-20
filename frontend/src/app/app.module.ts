@@ -23,6 +23,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 //Componentes Criados
 import { HeaderComponent } from './components/template/header/header.component';
@@ -41,6 +43,7 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
 import { UserReadComponent } from './components/user/user-read/user-read.component';
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
+
 
 registerLocaleData(localePt);
 
@@ -81,7 +84,9 @@ registerLocaleData(localePt);
     MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [{
     provide: LOCALE_ID,

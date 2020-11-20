@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../../models/users.model';
 import { UserService } from '../../../services/user.service';
 
+
 @Component({
   selector: 'app-user-create',
   templateUrl: './user-create.component.html',
@@ -16,19 +17,29 @@ export class UserCreateComponent implements OnInit {
     password: ''
   }
 
+  hide = true;
+  senha1: string
+  senha2: string
+
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   createUser(): void {
-    this.userService.create(this.user).subscribe(() => {
-      this.userService.showMessage('Usuário cadastrado com sucesso')
-      this.router.navigate(['users'])
-    })
+    if(this.senha1 === this.senha2){
+      this.userService.create(this.user).subscribe(() => {
+        this.userService.showMessage('Usuário cadastrado com sucesso')
+        this.router.navigate(['users'])
+      })
+    }
+    else{
+      this.userService.showMessage('As senhas dos campos devem ser iguais')
+    }
   }
 
   cancel(): void {
     this.router.navigate(['users'])
   }
+
 }
