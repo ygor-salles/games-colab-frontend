@@ -34,6 +34,12 @@
       "name": "Ygor Salles",
       "password": "123456",
       "id": 2
+    },
+    {
+      "email": "maria@gmail.com",
+      "name": "Maria Lucia",
+      "password": "",
+      "id": 3
     }
   ]
 }

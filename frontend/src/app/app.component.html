@@ -1,3 +1,9 @@
-<app-header></app-header>
-<app-nav></app-nav>
-<app-footer></app-footer>
+<div *ngIf="mostrarMenu">
+    <app-header></app-header>
+    <app-nav></app-nav>
+    <app-footer></app-footer>
+</div>
+
+<div *ngIf="!mostrarMenu">
+    <app-login></app-login>
+</div>
