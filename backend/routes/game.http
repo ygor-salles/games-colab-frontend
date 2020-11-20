@@ -1,0 +1,25 @@
+### SELECT Busca a informação do jogo
+GET  http://localhost:3000/game/:game_id HTTP/1.1
+
+
+### INSERT Registra jogo (campos obrigatórios)
+POST  http://localhost:3000/game HTTP/1.1
+Content-Type: application/json
+{
+    "image": "",
+    "description": {
+        
+    }
+}
+
+### UPDATE
+PUT  http://localhost:3000/game/:game_id HTTP/1.1
+Content-Type: application/json
+{
+    "description": {
+
+    }
+}
+
+### DELETE Remove o jogo
+DELETE  http://localhost:3000/game/:game_id HTTP/1.1
