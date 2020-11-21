@@ -45,4 +45,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['login'])
   }
 
+  sair() {
+    this.authService.auth('')
+    this.userAuth = ''
+  }
+
 }
