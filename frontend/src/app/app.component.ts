@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
-  public mostrarMenu: boolean = false
+  public mostrarMenu: boolean = true
 
   constructor() {}
 

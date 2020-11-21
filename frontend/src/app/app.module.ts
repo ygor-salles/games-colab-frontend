@@ -47,6 +47,7 @@ import { LoginComponent } from './login/login/login.component';
 
 //Services globais
 import { AuthService } from './services/auth.service';
+import { ConsoleEscolhidoService } from './services/console-escolhido.service';
 
 registerLocaleData(localePt);
 
@@ -97,7 +98,8 @@ registerLocaleData(localePt);
       provide: LOCALE_ID,
       useValue: 'pt-BR'
     },
-    AuthService
+    AuthService,
+    ConsoleEscolhidoService
   ],
   bootstrap: [AppComponent]
 })
