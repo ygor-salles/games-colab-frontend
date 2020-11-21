@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { User } from './../../models/users.model';
 import { UserService } from './../../services/user.service';
 import { AppComponent } from './../../app.component';
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private appComponent: AppComponent,
-    private userService: UserService
+    private userService: UserService,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
     if(this.consultaUser == undefined)
       this.userService.showMessage('Usuário ou senha incorreto')
     else{
+      this.authService.auth(this.consultaUser.name)
       this.router.navigate(['/'])
       this.appComponent.mostrarMenu = true
     }

@@ -22,5 +22,6 @@
             <button mat-menu-item (click)="registrar()">Registrar</button>
         </mat-menu>
     </div>
-    <span>Logar</span>
+    <span *ngIf="userAuth==''">Logar</span>
+    <span *ngIf="userAuth!=''">{{ userAuth }}</span>
   </mat-toolbar>

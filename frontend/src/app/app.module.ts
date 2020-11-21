@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from  '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
-import { registerLocaleData } from  '@angular/common';
+import { registerLocaleData } from '@angular/common';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,7 +15,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSnackBarModule } from  '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
@@ -45,7 +45,8 @@ import { UserDeleteComponent } from './components/user/user-delete/user-delete.c
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 import { LoginComponent } from './login/login/login.component';
 
-
+//Services globais
+import { AuthService } from './services/auth.service';
 
 registerLocaleData(localePt);
 
@@ -93,10 +94,11 @@ registerLocaleData(localePt);
   ],
   providers: [
     {
-    provide: LOCALE_ID,
-    useValue: 'pt-BR'
-  }
-],
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+    },
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

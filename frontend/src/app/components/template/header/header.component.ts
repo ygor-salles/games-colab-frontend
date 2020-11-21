@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { AppComponent } from './../../../app.component';
 import { Router } from '@angular/router';
 import { HeaderService } from './header.service';
@@ -10,13 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  userAuth: string
+
   constructor(
     private headerService: HeaderService, 
     private router: Router, 
-    private appComponent: AppComponent
+    private appComponent: AppComponent,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
+    this.userAuth = this.authService.usuarioAutenticado
   }
 
   get title(): string {
