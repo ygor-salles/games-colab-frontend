@@ -13,7 +13,8 @@ export class XboxCrudComponent implements OnInit {
     headerService.headerData = {
       title: 'Cadastro de Games - Xbox',
       icon: 'sports_esports',
-      routeUrl: '/xbox'
+      routeUrl: '/xbox',
+      imgUrl: 'assets/img/halo.png'
     }
    }
 

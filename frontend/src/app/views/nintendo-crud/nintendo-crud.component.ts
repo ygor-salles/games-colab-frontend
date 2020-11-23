@@ -13,7 +13,8 @@ export class NintendoCrudComponent implements OnInit {
     headerService.headerData = {
       title: 'Cadastro de Games - Nintendo',
       icon: 'videogame_asset',
-      routeUrl: '/nintendo'
+      routeUrl: '/nintendo',
+      imgUrl: 'assets/img/mario.png'
     }
    }
 

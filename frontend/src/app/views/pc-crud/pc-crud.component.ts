@@ -13,7 +13,8 @@ export class PcCrudComponent implements OnInit {
     headerService.headerData = {
       title: 'Cadastro de Games - PC',
       icon: 'desktop_windows',
-      routeUrl: '/pc'
+      routeUrl: '/pc',
+      imgUrl: 'assets/img/csGo.png'
     }
    }
 

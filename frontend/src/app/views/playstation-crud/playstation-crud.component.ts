@@ -13,7 +13,8 @@ export class PlaystationCrudComponent implements OnInit {
     headerService.headerData = {
       title: 'Cadastro de Games - Playstation',
       icon: 'gamepad',
-      routeUrl: '/playstation'
+      routeUrl: '/playstation',
+      imgUrl: 'assets/img/kratos-mini.png'
     }
    }
 
