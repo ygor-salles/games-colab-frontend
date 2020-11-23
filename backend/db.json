@@ -2,9 +2,10 @@
   "games": [
     {
       "title": "God of War",
-      "summary": "God of War é uma série de jogos eletrônicos de ação-aventura vagamente baseado nas mitologias grega e nórdica sendo criado originalmente por David Jaffe da Santa Monica Studio. Iniciada em 2005, a série tornou-se carro-chefe para a marca PlayStation, que consiste em oito jogos em várias plataformas.",
+      "summary": "God of War é uma série de jogos eletrônicos de ação-aventura vagamente baseado nas mitologias grega e nórdica sendo criado originalmente por David Jaffe da Santa Monica Studio. Iniciada em 2005, a série tornou-se carro-chefe para a marca PlayStation, que consiste em oito jogos em várias plataforma",
       "developer": "Santa Monica",
       "genre": "RPG",
+      "console": "Playstation",
       "id": 1
     },
     {
@@ -12,6 +13,7 @@
       "summary": "The Last of Us é uma franquia de jogos eletrônicos de ação-aventura e survival horror exclusiva da PlayStation, criada por Neil Druckmann. A franquia é situada em um mundo pós-apocalíptico, com seres humanos hostis e criaturas canibalísticas infectadas por uma mutação do fungo Cordyceps.",
       "developer": "Naughty Dog",
       "genre": "Ação",
+      "console": "Playstation",
       "id": 2
     },
     {
@@ -19,7 +21,16 @@
       "summary": "Uncharted é uma série de videojogos de ação-aventura produzida pela Naughty Dog e publicada pela Sony Computer Entertainment para as plataformas PlayStation.",
       "developer": "Naughty Dog",
       "genre": "Aventura",
+      "console": "Playstation",
       "id": 3
+    },
+    {
+      "title": "Forza Horizon",
+      "summary": "Forza Horizon é um jogo de corrida exclusivo para o console Xbox 360 e retrocompatível com Xbox One com melhorias e resolução 4K.",
+      "developer": "Play Ground Games",
+      "genre": "Esporte",
+      "console": "Playstation",
+      "id": 4
     }
   ],
   "users": [
