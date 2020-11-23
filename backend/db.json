@@ -1,36 +1,38 @@
 {
-  "games": [
+  "playstation": [
     {
       "title": "God of War",
-      "summary": "God of War é uma série de jogos eletrônicos de ação-aventura vagamente baseado nas mitologias grega e nórdica sendo criado originalmente por David Jaffe da Santa Monica Studio. Iniciada em 2005, a série tornou-se carro-chefe para a marca PlayStation, que consiste em oito jogos em várias plataforma",
-      "developer": "Santa Monica",
+      "summary": "God of War é uma série de jogos eletrônicos de ação-aventura vagamente baseado nas mitologias grega e nórdica sendo criado originalmente por David Jaffe da Santa Monica Studio. Iniciada em 2005, a série tornou-se carro-chefe para a marca PlayStation, que consiste em oito jogos em várias plataformas.",
+      "developer": "Santa Mônica",
       "genre": "RPG",
-      "console": "Playstation",
       "id": 1
-    },
-    {
-      "title": "The last of Us",
-      "summary": "The Last of Us é uma franquia de jogos eletrônicos de ação-aventura e survival horror exclusiva da PlayStation, criada por Neil Druckmann. A franquia é situada em um mundo pós-apocalíptico, com seres humanos hostis e criaturas canibalísticas infectadas por uma mutação do fungo Cordyceps.",
-      "developer": "Naughty Dog",
-      "genre": "Ação",
-      "console": "Playstation",
-      "id": 2
-    },
-    {
-      "title": "Uncharted",
-      "summary": "Uncharted é uma série de videojogos de ação-aventura produzida pela Naughty Dog e publicada pela Sony Computer Entertainment para as plataformas PlayStation.",
-      "developer": "Naughty Dog",
-      "genre": "Aventura",
-      "console": "Playstation",
-      "id": 3
-    },
+    }
+  ],
+  "xbox": [
     {
       "title": "Forza Horizon",
       "summary": "Forza Horizon é um jogo de corrida exclusivo para o console Xbox 360 e retrocompatível com Xbox One com melhorias e resolução 4K.",
       "developer": "Play Ground Games",
-      "genre": "Esporte",
-      "console": "Playstation",
-      "id": 4
+      "genre": "Esportes",
+      "id": 1
+    }
+  ],
+  "nintendo": [
+    {
+      "title": "Mario",
+      "summary": "Traduzido do inglês-Super Mario é uma série de jogos de plataforma e franquia de mídia criada pela Nintendo e apresentando seu mascote, Mario. Alternativamente chamada de série Super Mario Bros. ou simplesmente série Mario, é a série central da grande franquia Mario.",
+      "developer": "Nintendo",
+      "genre": "Estratégia",
+      "id": 1
+    }
+  ],
+  "pc": [
+    {
+      "title": "Counter-Strike",
+      "summary": "Counter-Strike: Global Offensive é um jogo online desenvolvido pela Valve Corporation e pela Hidden Path Entertainment, sendo uma sequência de Counter-Strike: Source. É o quarto título principal da franquia.",
+      "developer": "Valve Corporation",
+      "genre": "Ação",
+      "id": 1
     }
   ],
   "users": [
