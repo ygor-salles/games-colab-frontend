@@ -1,23 +1,22 @@
 import { GameService } from './../../../services/game.service';
 import { Game } from './../../../models/game.model';
 import { Component, OnInit } from '@angular/core';
-import { ConsoleEscolhidoService } from 'src/app/services/console-escolhido.service';
 
 @Component({
-  selector: 'app-game-read',
-  templateUrl: './game-read.component.html',
-  styleUrls: ['./game-read.component.css']
+  selector: 'app-pc-read',
+  templateUrl: './pc-read.component.html',
+  styleUrls: ['./pc-read.component.css']
 })
-export class GameReadComponent implements OnInit {
+export class PcReadComponent implements OnInit {
 
   games: Game[]
   gameConsole: Game[]
   displayedColumns = ['id', 'title', 'summary', 'developer', 'genre', 'action'];
   
-  constructor(private gameService: GameService, private consoleService: ConsoleEscolhidoService) { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
-    this.gameService.read().subscribe(games => {
+    this.gameService.read('pc').subscribe(games => {
       this.games = games
     })
   }
@@ -25,4 +24,5 @@ export class GameReadComponent implements OnInit {
   openDialog(event: string) {
     this.gameService.openDialog(event)
   }
+
 }

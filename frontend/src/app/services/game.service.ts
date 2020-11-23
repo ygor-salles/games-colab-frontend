@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
 })
 export class GameService {
 
-  baseUrl = 'http://localhost:3001/games'
+  baseUrl = 'http://localhost:3001'
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient, private dialog: MatDialog) {}
 
@@ -30,38 +30,38 @@ export class GameService {
     this.dialog.open(DialogComponent, {data: {summary: summaryCapture}})
   }
 
-  create(game: Game): Observable<Game> {
-    return this.http.post<Game>(this.baseUrl, game).pipe(
+  create(game: Game, rota: string): Observable<Game> {
+    return this.http.post<Game>(`${this.baseUrl}/${rota}`, game).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  read(): Observable<Game[]> {
-    return this.http.get<Game[]>(this.baseUrl).pipe(
+  read(rota: string): Observable<Game[]> {
+    return this.http.get<Game[]>(`${this.baseUrl}/${rota}`).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  readById(id: number): Observable<Game> {
-    const url = `${this.baseUrl}/${id}`;
+  readById(id: number, rota: string): Observable<Game> {
+    const url = `${this.baseUrl}/${rota}/${id}`;
     return this.http.get<Game>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  update(game: Game): Observable<Game> {
-    const url = `${this.baseUrl}/${game.id}`;
+  update(game: Game, rota: string): Observable<Game> {
+    const url = `${this.baseUrl}/${rota}/${game.id}`;
     return this.http.put<Game>(url, game).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  delete(id: number): Observable<Game> {
-    const url = `${this.baseUrl}/${id}`;
+  delete(id: number, rota: string): Observable<Game> {
+    const url = `${this.baseUrl}/${rota}/${id}`;
     return this.http.delete<Game>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))

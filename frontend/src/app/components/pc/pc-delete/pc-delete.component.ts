@@ -3,12 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Game } from 'src/app/models/game.model';
 import { GameService } from 'src/app/services/game.service';
 
+
 @Component({
-  selector: 'app-game-delete',
-  templateUrl: './game-delete.component.html',
-  styleUrls: ['./game-delete.component.css']
+  selector: 'app-pc-delete',
+  templateUrl: './pc-delete.component.html',
+  styleUrls: ['./pc-delete.component.css']
 })
-export class GameDeleteComponent implements OnInit {
+export class PcDeleteComponent implements OnInit {
+
   game: Game;
 
   constructor(
@@ -19,19 +21,20 @@ export class GameDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.gameService.readById(id).subscribe((game) => {
+    this.gameService.readById(id, 'pc').subscribe((game) => {
       this.game = game;
     });
   }
 
   deleteGame(): void {
-    this.gameService.delete(this.game.id).subscribe(() => {
+    this.gameService.delete(this.game.id, 'pc').subscribe(() => {
       this.gameService.showMessage("Jogo excluido com sucesso!");
-      this.router.navigate(["/games"]);
+      this.router.navigate(["/pc"]);
     });
   }
 
   cancel(): void {
-    this.router.navigate(["/games"]);
+    this.router.navigate(["/pc"]);
   }
 }
+

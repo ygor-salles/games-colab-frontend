@@ -3,12 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Game } from 'src/app/models/game.model';
 import { GameService } from 'src/app/services/game.service';
 
+
 @Component({
-  selector: 'app-game-update',
-  templateUrl: './game-update.component.html',
-  styleUrls: ['./game-update.component.css']
+  selector: 'app-pc-update',
+  templateUrl: './pc-update.component.html',
+  styleUrls: ['./pc-update.component.css']
 })
-export class GameUpdateComponent implements OnInit {
+export class PcUpdateComponent implements OnInit {
   game: Game;
   genres = ['Ação', 'Aventura', 'Estratégia', 'RPG', 'Esporte', 'Simulação']
 
@@ -20,19 +21,20 @@ export class GameUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get("id");
-    this.gameService.readById(id).subscribe((game) => {
+    this.gameService.readById(id, 'pc').subscribe((game) => {
       this.game = game;
     });
   }
 
   updateGame(): void {
-    this.gameService.update(this.game).subscribe(() => {
+    this.gameService.update(this.game, 'pc').subscribe(() => {
       this.gameService.showMessage("Jogo atualizado com sucesso!");
-      this.router.navigate(["/games"]);
+      this.router.navigate(["/pc"]);
     });
   }
 
   cancel(): void {
-    this.router.navigate(["/games"]);
+    this.router.navigate(["/pc"]);
   }
 }
+
