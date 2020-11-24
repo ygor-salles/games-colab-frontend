@@ -1,3 +1,4 @@
+import { ConsoleEscolhidoService } from './../../../services/console-escolhido.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +10,13 @@ export class NavComponent implements OnInit {
 
   consolee: string
   
-  constructor() { }
+  constructor(private consoleService: ConsoleEscolhidoService) { }
 
   ngOnInit(): void {
   }
 
+  consoleEscolhido(consolee: string) {
+    this.consolee = consolee
+    this.consoleService.checkConsole(this.consolee)
+  }
 }

@@ -36,10 +36,6 @@ export class HeaderComponent implements OnInit {
     return this.headerService.headerData.routeUrl
   }
 
-  get imgUrl(): string {
-    return this.headerService.headerData.imgUrl
-  }
-
   registrar() {
     this.router.navigate(['users/create'])
   }
