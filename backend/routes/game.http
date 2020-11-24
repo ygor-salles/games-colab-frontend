@@ -2,12 +2,7 @@
 GET  http://localhost:3001/game/ HTTP/1.1
 
 ### SELECT Busca jogos usando o filtro de type
-GET  http://localhost:3001/game HTTP/1.1
-Content-Type: application/json
-
-{
-    "type": "playstation"
-}
+GET  http://localhost:3001/game?type=playstation HTTP/1.1
 
 ### INSERT Registra jogo (campos obrigatórios)
 POST  http://localhost:3001/game HTTP/1.1
