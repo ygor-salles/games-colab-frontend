@@ -12,6 +12,6 @@ module.exports = app => {
 
     router.delete('/:id', game.delete);
 
-    app.use('/game', router);
+    app.use('/games', router);
 
 };

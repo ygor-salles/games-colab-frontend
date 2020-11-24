@@ -18,14 +18,14 @@ export class GameDeleteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.gameService.readById(id).subscribe((game) => {
       this.game = game;
     });
   }
 
   deleteGame(): void {
-    this.gameService.delete(this.game.id).subscribe(() => {
+    this.gameService.delete(this.game._id).subscribe(() => {
       this.gameService.showMessage("Jogo excluido com sucesso!");
       this.router.navigate(["/games"]);
     });

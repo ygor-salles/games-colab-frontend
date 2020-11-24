@@ -1,6 +1,6 @@
 import { DialogComponent } from './dialog/dialog.component';
 import { Game } from './../models/game.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -38,14 +38,17 @@ export class GameService {
   }
 
   read(): Observable<Game[]> {
-    return this.http.get<Game[]>(this.baseUrl).pipe(
+    //let params = new HttpParams();
+    //params = params.append('type', 'playstation');
+
+    return this.http.get<Game[]>(`${this.baseUrl}?type=playstation`).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  readById(id: number): Observable<Game> {
-    const url = `${this.baseUrl}/${id}`;
+  readById(_id: string): Observable<Game> {
+    const url = `${this.baseUrl}/${_id}`;
     return this.http.get<Game>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -53,15 +56,15 @@ export class GameService {
   }
 
   update(game: Game): Observable<Game> {
-    const url = `${this.baseUrl}/${game.id}`;
+    const url = `${this.baseUrl}/${game._id}`;
     return this.http.put<Game>(url, game).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  delete(id: number): Observable<Game> {
-    const url = `${this.baseUrl}/${id}`;
+  delete(_id: string): Observable<Game> {
+    const url = `${this.baseUrl}/${_id}`;
     return this.http.delete<Game>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))

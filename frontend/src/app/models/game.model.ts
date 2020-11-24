@@ -1,8 +1,8 @@
 export interface Game {
-    id?: number,
+    _id: string,
     title: string,
     summary: string,
     developer: string,
     genre: string,
-    console: string
+    type: string
 }

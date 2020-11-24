@@ -12,11 +12,12 @@ import { Component, OnInit } from '@angular/core';
 export class GameCreateComponent implements OnInit {
 
   game: Game = {
+    _id: '',
     title: '',
     summary: '',
     developer: '',
     genre: '',
-    console: ''
+    type: ''
   }
 
   genres = ['Ação', 'Aventura', 'Estratégia', 'RPG', 'Esporte', 'Simulação']
@@ -31,7 +32,7 @@ export class GameCreateComponent implements OnInit {
   }
 
   createGame() {
-    this.game.console = this.consoleService.consoleEscolhido
+    this.game.type = this.consoleService.consoleEscolhido
     this.gameService.create(this.game).subscribe(() => {
       this.gameService.showMessage('Jogo cadastrado com sucesso')
       this.router.navigate(['/games'])

@@ -19,7 +19,7 @@ export class GameUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get("id");
+    const id = this.route.snapshot.paramMap.get("id");
     this.gameService.readById(id).subscribe((game) => {
       this.game = game;
     });
