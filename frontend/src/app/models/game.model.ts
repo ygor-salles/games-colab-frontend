@@ -3,5 +3,6 @@ export interface Game {
     title: string,
     summary: string,
     developer: string,
-    genre: string
+    genre: string,
+    console: string
 }
