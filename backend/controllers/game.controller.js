@@ -3,15 +3,18 @@ const Game = db.game;
 
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.image || !req.body.description) {
-        res.status(400).send({ message: "Content can not be empty!" });
+    if (!req.body) {
+        res.status(400).send({ message: "Campos obrigatórios não podem ser vazios!" });
         return;
     }
 
     // Create a Game instance
     const game = new Game({
-        image: req.body.image,
-        description: req.body.description
+        type: req.body.type,
+        title: req.body.title,
+        summary: req.body.summary,
+        developer: req.body.developer,
+        genre: req.body.genre
     });
 
     // Save Game in the database
@@ -22,7 +25,7 @@ exports.create = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while creating the game."
+                message: err.message || "Algum erro aconteceu ao salvar o jogo."
             });
         });
 };
@@ -35,27 +38,31 @@ exports.findOne = (req, res) => {
         .then(data => {
             if (!data)
                 res.status(404).send({
-                    message: "Not found Game with id " + id
+                    message: "Não foi encontrado um jogo com o ID " + id
                 });
             else 
                 res.send(data);
         })
         .catch(() => {
             res.status(500).send({
-                message: "Error retrieving Game with id=" + id
+                message: "Erro ao buscar um jogo com o ID " + id
             });
         });
 };
 
 exports.findAll = (req, res) => {
+    const type = req.query.type;
+    let condition = type ? { type: type } : {};
+
     Game
-        .find({})
+        .find(condition)
         .then(data => {
+            console.log(data);
             res.status(200).send(data);
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while retrieving games."
+                message: err.message || "Algum erro aconteceu ao buscar os jogos."
             });
         });
 };
@@ -63,7 +70,7 @@ exports.findAll = (req, res) => {
 exports.update = (req, res) => {
     if (!req.body) {
         res.status(400).send({
-            message: "Data to update can not be empty!"
+            message: "Body da requisição não pode ser vazio."
         });
         return;
     }
@@ -75,17 +82,17 @@ exports.update = (req, res) => {
         .then(data => {
             if (!data) {
                 res.status(404).send({
-                    message: `Cannot update Game with id=${id}. Maybe Game was not found!`
+                    message: `Não foi possível encontrar um jogo com o ID ${id}. Talvez o jogo não exista!`
                 });
             } else {
                 res.send({
-                    message: "Game was updated successfully."
+                    message: "Jogo atualizado com sucesso."
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Error updating Game to game with id=" + id
+                message: err.message || "Algum erro aconteceu ao tentar o jogo com o ID " + id
             });
         });
 };
@@ -98,17 +105,17 @@ exports.delete = async (req, res) => {
         .then(data => {
             if (!data) {
                 res.status(404).send({
-                    message: `Cannot delete Game with id=${id}. Maybe Game was not found!`
+                    message: `Não foi possível excluir o jogo de ID ${id}. Talvez o jogo não exista!`
                 });
             } else {
                 res.send({
-                    message: "Game was deleted successfully!"
+                    message: "Jogo deletado com sucesso!"
                 });
             }
         })
         .catch(() => {
             res.status(500).send({
-                message: "Could not delete Game with id=" + id
+                message: "Erro ao excluir o jogo com o ID" + id
             });
         });
 };
