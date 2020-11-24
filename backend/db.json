@@ -1,9 +1,10 @@
 {
-  "games": [
+  "games": [],
+  "playstation": [
     {
       "title": "God of War",
       "summary": "God of War é uma série de jogos eletrônicos de ação-aventura vagamente baseado nas mitologias grega e nórdica sendo criado originalmente por David Jaffe da Santa Monica Studio. Iniciada em 2005, a série tornou-se carro-chefe para a marca PlayStation, que consiste em oito jogos em várias plataformas.",
-      "developer": "Santa Monica",
+      "developer": "Santa Mônica",
       "genre": "RPG",
       "id": 1
     },
@@ -18,6 +19,75 @@
       "title": "Uncharted",
       "summary": "Uncharted é uma série de videojogos de ação-aventura produzida pela Naughty Dog e publicada pela Sony Computer Entertainment para as plataformas PlayStation.",
       "developer": "Naughty Dog",
+      "genre": "Aventura",
+      "id": 3
+    }
+  ],
+  "xbox": [
+    {
+      "title": "Forza Horizon",
+      "summary": "Forza Horizon é um jogo de corrida exclusivo para o console Xbox 360 e retrocompatível com Xbox One com melhorias e resolução 4K.",
+      "developer": "Play Ground Games",
+      "genre": "Esportes",
+      "id": 1
+    },
+    {
+      "title": "Halo 5: Guardians",
+      "summary": "O quinto jogo da bem-sucedida franquia Halo é o primeiro a não ser classificado para maiores. Mas não é por isso que Halo 5: Guardians é menos explosivo e duro que os títulos anteriores. Nele, Master Chief desapareceu em uma missão. Agora o Fire Team Osiris precisa encontrá-lo e capturá-lo. Dessa forma, o plot do jogo segue duas linhas narrativas diferentes.",
+      "developer": "343 Industries",
+      "genre": "Estratégia",
+      "id": 2
+    },
+    {
+      "title": "Gears of War 4",
+      "summary": "Gears of War 4 é um jogo de tiro em terceira pessoa produzido pelo estúdio canadense The Coalition. O quinto título da série Gears of War, foi publicado pela Xbox Game Studios Exclusivamente para Xbox One e Windows 10 em 11 de Outubro de 2016.",
+      "developer": "The Coalition",
+      "genre": "Estratégia",
+      "id": 3
+    }
+  ],
+  "nintendo": [
+    {
+      "title": "Mario",
+      "summary": "Traduzido do inglês-Super Mario é uma série de jogos de plataforma e franquia de mídia criada pela Nintendo e apresentando seu mascote, Mario. Alternativamente chamada de série Super Mario Bros. ou simplesmente série Mario, é a série central da grande franquia Mario.",
+      "developer": "Nintendo",
+      "genre": "Estratégia",
+      "id": 1
+    },
+    {
+      "title": "The Legend of Zelda: Link's Awakening",
+      "summary": "The Legend of Zelda: Link's Awakening é um jogo eletrônico de ação-aventura desenvolvido pela Nintendo Entertainment Analysis & Development e publicado pela Nintendo.",
+      "developer": "Nintendo",
+      "genre": "RPG",
+      "id": 2
+    },
+    {
+      "title": "Luigi’s Mansion 3",
+      "summary": "Um dos últimos grandes lançamentos do Switch em 2019 e favorito pessoal deste redator, Luigi’s Mansion 3 alça o irmão de Mario ao panteão de grandes protagonistas da Nintendo. A terceira aventura de uma franquia meio inconstante chegou com o desafio na medida e a diversão nas alturas, com uma criatividade que respira a cada novo andar desbravado.",
+      "developer": "Luigi’s Mansion 3",
+      "genre": "Estratégia",
+      "id": 3
+    }
+  ],
+  "pc": [
+    {
+      "title": "Counter-Strike",
+      "summary": "Counter-Strike: Global Offensive é um jogo online desenvolvido pela Valve Corporation e pela Hidden Path Entertainment, sendo uma sequência de Counter-Strike: Source. É o quarto título principal da franquia.",
+      "developer": "Valve Corporation",
+      "genre": "Ação",
+      "id": 1
+    },
+    {
+      "title": "Half-Life",
+      "summary": "Half-Life é uma série de jogos de tiro em primeira pessoa que dividem uma história alternativa de ficção científica. Todos os jogos na série utilizam, ou o motor de jogo Gold Src, ou Source, são lineares, narrativos e de um jogador.",
+      "developer": "Valve-Corporation",
+      "genre": "Ação",
+      "id": 2
+    },
+    {
+      "title": "Grand Theft Auto",
+      "summary": "Grand Theft Auto é uma série de jogos eletrônicos criada por David Jones e Mike Dailly, sendo posteriormente gerenciada pelos irmãos Dan e Sam Houser, Leslie Benzies e Aaron Garbut. A maioria dos jogos foi desenvolvida pela Rockstar North e publicada pela Rockstar Games.",
+      "developer": "Rockstar Games",
       "genre": "Aventura",
       "id": 3
     }

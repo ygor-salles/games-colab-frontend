@@ -12,7 +12,8 @@ export class HomeComponent implements OnInit {
     headerService.headerData = {
       title: 'Sistema colaborativo de Jogos',
       icon: 'home',
-      routeUrl: ''
+      routeUrl: '',
+      imgUrl: 'assets/img/kratos-mini.png'
     }
   }
 

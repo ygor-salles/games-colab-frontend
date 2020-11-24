@@ -13,7 +13,8 @@ export class UsersCrudComponent implements OnInit {
     headerService.headerData = {
       title: 'Cadastro de Usuários',
       icon: 'person',
-      routeUrl: '/users'
+      routeUrl: '/users',
+      imgUrl: 'assets/img/kratos-mini.png'
     }
   }
 

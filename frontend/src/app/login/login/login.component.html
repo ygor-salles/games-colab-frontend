@@ -1,6 +1,8 @@
 <div class="tela">
     <mat-card class="container-login">
-        <mat-card-title class="titulo">Login</mat-card-title>
+        <mat-card-title class="titulo">
+            <img class="kratos-mini" src="../../../assets/img/kratos-mini.png" alt="kratos">
+        </mat-card-title>
         <form>
             <mat-form-field>
                 <input [(ngModel)]="usuario.email" type="email" matInput placeholder="E-mail" name="email" id="email">
@@ -19,7 +21,7 @@
             Login
             <i class="material-icons right">send</i>
         </button>
-        <button mat-raised-button name="retorno" (click)="voltarHome()">Voltar</button>
+        <button mat-raised-button name="retorno" (click)="voltarHome()">Entrar sem Logar</button>
         <br><br><br>
         <a routerLink="users/create" (click)="registrar()">Registrar-se</a>
     </mat-card>
