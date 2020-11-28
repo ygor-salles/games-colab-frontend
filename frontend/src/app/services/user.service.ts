@@ -42,6 +42,13 @@ export class UserService {
       catchError(e => this.errorHandler(e))
     )
   }
+  
+  login(body: any): Observable<User[]> {
+    return this.http.post<User[]>(`${this.baseUrl}/login`, body).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
+    )
+  }
 
   readById(id: number): Observable<User> {
     const url = `${this.baseUrl}/${id}`
