@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-delete.component.css']
 })
 export class UserDeleteComponent implements OnInit {
-  user: User
+  user: User = {} as User;
 
   constructor(
     private userService: UserService,
