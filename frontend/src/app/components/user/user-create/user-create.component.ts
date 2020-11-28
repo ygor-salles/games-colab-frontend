@@ -12,6 +12,7 @@ import { UserService } from '../../../services/user.service';
 export class UserCreateComponent implements OnInit {
 
   user: User = {
+    _id: '',
     email: '',
     name: '',
     password: ''

@@ -50,7 +50,7 @@ export class UserService {
     )
   }
 
-  readById(id: number): Observable<User> {
+  readById(id: string): Observable<User> {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<User>(url).pipe(
       map(obj => obj),
@@ -59,14 +59,14 @@ export class UserService {
   }
 
   update(user: User): Observable<User> {
-    const url = `${this.baseUrl}/${user.id}`
+    const url = `${this.baseUrl}/${user._id}`
     return this.http.put<User>(url, user).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )
   }
 
-  delete(id: number): Observable<User> {
+  delete(id: string): Observable<User> {
     const url = `${this.baseUrl}/${id}`
     return this.http.delete<User>(url).pipe(
       map(obj => obj),
