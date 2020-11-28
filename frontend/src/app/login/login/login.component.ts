@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
 
   hide = true;
   usuario = { email: '', password: '' }
-  listaUsuariosBD: User[]
   consultaUser: any
 
   constructor(
@@ -25,11 +24,15 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userService.read().subscribe(user => this.listaUsuariosBD = user)
   }
 
   fazerLogin() {
-    this.consultaUser = this.listaUsuariosBD.find(user => user.email == this.usuario.email && user.password == this.usuario.password)
+    let body = {
+        email: this.usuario.email,
+        password: this.usuario.password
+    }
+    this.consultaUser = this.userService.login(body).subscribe()
+
     if(this.consultaUser == undefined)
       this.userService.showMessage('Usuário ou senha incorreto')
     else{

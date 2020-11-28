@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserUpdateComponent implements OnInit {
 
-  user: User
+  user: User = {} as User;
 
   constructor(
     private userService: UserService,
@@ -19,19 +19,21 @@ export class UserUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')
-    this.userService.readById(id).subscribe(user => this.user = user)
+    const id = this.route.snapshot.paramMap.get('id')
+    this.userService.readById(id).subscribe((user) => {
+        this.user = user;
+    });
   }
 
   updateUser(): void {
     this.userService.update(this.user).subscribe(() => {
       this.userService.showMessage('Usuário atualizado com sucesso!')
-      this.router.navigate(['users'])
+      this.router.navigate(['/users'])
     })
   }
   
   cancel(): void {
-    this.router.navigate(['users'])
+    this.router.navigate(['/users'])
   }
 
 }
