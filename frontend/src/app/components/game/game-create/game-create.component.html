@@ -19,6 +19,14 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Console</mat-label>
+            <mat-select [(ngModel)]="game.type" name="type">
+                <mat-option *ngFor="let type of types" [value]="type">
+                    {{ type }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
     </form>
     <button mat-raised-button (click)="createGame()" color="primary">
         Salvar

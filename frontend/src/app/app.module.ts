@@ -1,7 +1,7 @@
 //Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatAutocompleteModule } from '@angular/material/autocomplete'; 
 
 //Componentes Criados
 import { HeaderComponent } from './components/template/header/header.component';
@@ -44,10 +45,10 @@ import { UserReadComponent } from './components/user/user-read/user-read.compone
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 import { LoginComponent } from './login/login/login.component';
+import { MatDividerModule } from '@angular/material/divider'; 
 
 //Services globais
 import { AuthService } from './services/auth.service';
-import { ConsoleEscolhidoService } from './services/console-escolhido.service';
 
 registerLocaleData(localePt);
 
@@ -91,15 +92,17 @@ registerLocaleData(localePt);
     MatDialogModule,
     MatSelectModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatDividerModule
   ],
   providers: [
     {
       provide: LOCALE_ID,
       useValue: 'pt-BR'
     },
-    AuthService,
-    ConsoleEscolhidoService
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

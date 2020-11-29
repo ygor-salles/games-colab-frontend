@@ -1,3 +1,7 @@
 button {
     margin-bottom: 30px;
 }
+
+mat-divider {
+    border-top-width: 40px;
+}

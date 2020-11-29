@@ -57,7 +57,6 @@ exports.findAll = (req, res) => {
     Game
         .find(condition)
         .then(data => {
-            console.log(data);
             res.status(200).send(data);
         })
         .catch(err => {

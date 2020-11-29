@@ -1,7 +1,6 @@
 import { GameService } from './../../../services/game.service';
 import { Game } from './../../../models/game.model';
 import { Component, OnInit } from '@angular/core';
-import { ConsoleEscolhidoService } from 'src/app/services/console-escolhido.service';
 
 @Component({
   selector: 'app-game-read',
@@ -11,10 +10,9 @@ import { ConsoleEscolhidoService } from 'src/app/services/console-escolhido.serv
 export class GameReadComponent implements OnInit {
 
   games: Game[]
-  gameConsole: Game[]
-  displayedColumns = ['id', 'title', 'summary', 'developer', 'genre', 'action'];
+  displayedColumns = ['title', 'summary', 'developer', 'genre', 'action'];
   
-  constructor(private gameService: GameService, private consoleService: ConsoleEscolhidoService) { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
     this.gameService.read().subscribe(games => {

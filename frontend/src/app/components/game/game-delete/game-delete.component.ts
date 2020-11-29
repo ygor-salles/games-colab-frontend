@@ -9,7 +9,7 @@ import { GameService } from 'src/app/services/game.service';
   styleUrls: ['./game-delete.component.css']
 })
 export class GameDeleteComponent implements OnInit {
-  game: Game;
+  game: Game = {} as Game;
 
   constructor(
     private gameService: GameService,
