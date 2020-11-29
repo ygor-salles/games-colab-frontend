@@ -9,7 +9,7 @@ import { GameService } from 'src/app/services/game.service';
   styleUrls: ['./game-update.component.css']
 })
 export class GameUpdateComponent implements OnInit {
-  game: Game;
+  game: Game = {} as Game;
   genres = ['Ação', 'Aventura', 'Estratégia', 'RPG', 'Esporte', 'Simulação']
 
   constructor(

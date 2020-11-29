@@ -1,4 +1,3 @@
-import { ConsoleEscolhidoService } from './../../../services/console-escolhido.service';
 import { Router } from '@angular/router';
 import { GameService } from './../../../services/game.service';
 import { Game } from './../../../models/game.model';
@@ -24,15 +23,13 @@ export class GameCreateComponent implements OnInit {
 
   constructor(
     private gameService: GameService,
-    private router: Router, 
-    private consoleService: ConsoleEscolhidoService
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
   createGame() {
-    this.game.type = this.consoleService.consoleEscolhido
     this.gameService.create(this.game).subscribe(() => {
       this.gameService.showMessage('Jogo cadastrado com sucesso')
       this.router.navigate(['/games'])
