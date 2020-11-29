@@ -6,9 +6,8 @@ Será implementado, utilizando a MEAN Stack (Mongo, Express, Angular e Node), um
 
 ## Progresso atual
 
-Dois CRUDS implementados para uma aplicação AngularMaterial, conectando com o backend
+Dois CRUDS implementados para uma aplicação ![AngularMaterial](https://material.angular.io/components/categories), conectando com o backend.
 
-> Para fins de mock, os dados não estão salvos no banco. Se encontram disponíveis em um arquivo json (db.json)
 
 ----------
 
