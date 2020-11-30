@@ -8,8 +8,6 @@ module.exports = app => {
 
     router.get('/', rating.findAll);
 
-    router.get('/most_rated:type', rating.mostRated);
-
     router.put('/:id', rating.update);
 
     router.delete('/:id', rating.delete);

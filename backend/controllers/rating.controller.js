@@ -56,30 +56,6 @@ exports.findOne = (req, res) => {
         });
 };
 
-exports.mostRated = (req, res) => {
-    const id = req.params.id;
-
-    Rating
-        .findById(id)
-        .then(data => {
-            if (!data)
-                res
-                    .status(404)
-                    .send({
-                        message: "Não foi encontrado uma avaliação com o ID " + id
-                    });
-            else 
-                res.send(data);
-        })
-        .catch(() => {
-            res
-                .status(500)
-                .send({
-                    message: "Erro ao buscar uma avaliação com o ID " + id
-                });
-        });
-};
-
 exports.findAll = (req, res) => {
     const game_id = req.query.game_id;
     let condition = user_id ? { game_id: game_id } : {};
