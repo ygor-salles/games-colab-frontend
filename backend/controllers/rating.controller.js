@@ -58,7 +58,7 @@ exports.findOne = (req, res) => {
 
 exports.findAll = (req, res) => {
     const game_id = req.query.game_id;
-    let condition = user_id ? { game_id: game_id } : {};
+    let condition = game_id ? { game_id: game_id } : {};
 
     Rating
         .find(condition)
