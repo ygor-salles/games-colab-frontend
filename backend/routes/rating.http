@@ -1,9 +1,6 @@
 ### SELECT Busca a informação dos reviews
 GET  http://localhost:3001/ratings/ HTTP/1.1
 
-### SELECT Busca reviews por console, usando o filtro de tipo de console
-GET  http://localhost:3001/ratings/most_rated/:console_type HTTP/1.1
-
 ### SELECT Busca review pelo seu id
 GET  http://localhost:3001/ratings/:rating_id HTTP/1.1
 
