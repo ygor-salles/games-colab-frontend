@@ -26,6 +26,7 @@ app.use(function (req, res, next) {
 // Set our api routes
 require('./routes/game.routes')(app);
 require('./routes/user.routes')(app);
+require('./routes/rating.routes')(app);
 
 // Connect to mongodb
 db.mongoose
