@@ -1,0 +1,36 @@
+.games-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20em;
+}
+
+.titulo-consoles {
+  margin-top: 1em;
+  font-size: 4em;
+}
+
+.console-container { 
+  width: 16em;
+  cursor: pointer;
+}
+.console-container img { 
+  width: 100%;
+}
+
+#xbox {
+  width: 20%;
+}
+
+#play {
+  width: 24%;
+}
+
+#switch {
+  margin-top: 4em;
+  width: 25%;
+}
+
+#pc {
+  margin-top: 7em;
+  width: 30%;
+}

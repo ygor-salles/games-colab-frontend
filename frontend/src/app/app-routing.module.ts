@@ -13,6 +13,7 @@ import { HomeComponent } from './views/home/home.component';
 import { GamesCrudComponent } from './views/games-crud/games-crud.component';
 import { GameDeleteComponent } from './components/game/game-delete/game-delete.component';
 import { TopRatedComponent } from "./views/top-rated/top-rated.component";
+import { ConsolesComponent } from "./views/consoles/consoles.component";
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path: "top",
     component: TopRatedComponent
+  },
+  {
+    path: "consoles",
+    component: ConsolesComponent
   }
 ];
 

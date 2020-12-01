@@ -19,7 +19,7 @@ export class TopRatedComponent implements OnInit {
   ngOnInit(): void {
     this.gameService.read().subscribe((games) => {
       this.options = games.sort((gameA, gameB)=>{
-        return gameB.rating - gameA.rating
+        return gameB?.rating - gameA?.rating
       }
       )
       console.log('this.options', this.options)
