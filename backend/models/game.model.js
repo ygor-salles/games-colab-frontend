@@ -6,6 +6,7 @@ module.exports = (mongoose) => {
         summary: String,
         developer: String,
         genre: String,
+        rating: String,
         __v: {
             type: Number,
             select: false

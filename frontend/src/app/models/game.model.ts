@@ -4,5 +4,6 @@ export interface Game {
     summary: string,
     developer: string,
     genre: string,
-    type: string
+    type: string,
+    rating: any;
 }
