@@ -1,12 +1,14 @@
 .games-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 20em;
+  margin: auto;
+  margin-top: 10em;
+  max-width: 90%;
 }
 
 .titulo-consoles {
   margin-top: 1em;
-  font-size: 4em;
+  font-size: 2em;
 }
 
 .console-container { 
@@ -18,19 +20,19 @@
 }
 
 #xbox {
-  width: 20%;
+  width: 18%;
 }
 
 #play {
-  width: 24%;
+  width: 22%;
 }
 
 #switch {
   margin-top: 4em;
-  width: 25%;
+  width: 21%;
 }
 
 #pc {
   margin-top: 7em;
-  width: 30%;
+  width: 26%;
 }
