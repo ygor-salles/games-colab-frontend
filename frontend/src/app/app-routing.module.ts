@@ -12,6 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { GamesCrudComponent } from './views/games-crud/games-crud.component';
 import { GameDeleteComponent } from './components/game/game-delete/game-delete.component';
+import { TopRatedComponent } from "./views/top-rated/top-rated.component";
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "top",
+    component: TopRatedComponent
   }
 ];
 
