@@ -71,6 +71,10 @@ const routes: Routes = [
   {
     path: "consoles",
     component: ConsolesComponent
+  },
+  {
+    path: "consoles/:plataforma",
+    component: ConsolesComponent
   }
 ];
 
