@@ -49,6 +49,7 @@ import { MatDividerModule } from '@angular/material/divider';
 
 //Services globais
 import { AuthService } from './services/auth.service';
+import { TopRatedComponent } from './views/top-rated/top-rated.component';
 
 registerLocaleData(localePt);
 
@@ -70,7 +71,8 @@ registerLocaleData(localePt);
     UserReadComponent,
     UserDeleteComponent,
     UserUpdateComponent,
-    LoginComponent
+    LoginComponent,
+    TopRatedComponent
   ],
   imports: [
     BrowserModule,
