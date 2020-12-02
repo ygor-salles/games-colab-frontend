@@ -3,6 +3,7 @@ const express = require("express");
 const http = require("http");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 // Get our API routes
 const db = require("./models");
@@ -15,34 +16,37 @@ app.use(bodyParser.json());
 
 // Cross Origin middleware
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
 });
 
+// Serve Static files
+app.use("/files", express.static(path.join(__dirname, "uploads")));
+
 // Set our api routes
-require('./routes/game.routes')(app);
-require('./routes/user.routes')(app);
-require('./routes/rating.routes')(app);
+require("./routes/game.routes")(app);
+require("./routes/user.routes")(app);
+require("./routes/rating.routes")(app);
 
 // Connect to mongodb
 db.mongoose
-    .connect(db.url, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false,
-        useCreateIndex: true,
-    })
-    .then(() => {
-        console.log("Connected to the database!");
-    })
-    .catch((err) => {
-        console.log("Cannot connect to the database!", err);
-        process.exit();
-    });
+  .connect(db.url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+  })
+  .then(() => {
+    console.log("Connected to the database!");
+  })
+  .catch((err) => {
+    console.log("Cannot connect to the database!", err);
+    process.exit();
+  });
 
 // Get port from environment and store in Express.
 const port = process.env.PORT || "3001";

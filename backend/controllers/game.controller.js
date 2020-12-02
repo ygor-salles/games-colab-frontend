@@ -163,3 +163,32 @@ exports.mostRated = (req, res) => {
             });
     });
 };
+
+exports.upload = (req, res) => {
+	if (!req.body) {
+		res.status(400).send({
+			message: "Body da requisição não pode ser vazio.",
+		});
+		return;
+	}
+
+	const id = req.params.id;
+	const imgPath = { imgPath: req.file.filename };
+
+	Game.findByIdAndUpdate(id, imgPath)
+		.then((data) => {
+			if (!data) {
+				res.status(404).send({
+					message: `Não foi possível encontrar um jogo com o ID ${id}. Talvez o jogo não exista!`,
+				});
+			} else {
+				res.send(imgPath);
+			}
+		})
+		.catch((err) => {
+			res.status(500).send({
+				message:
+				err.message || "Algum erro aconteceu ao tentar o jogo com o ID " + id,
+			});
+	});
+};

@@ -31,3 +31,12 @@ Content-Type: application/json
 
 ### DELETE Remove o jogo
 DELETE  http://localhost:3001/games/:game_id HTTP/1.1
+
+
+### POST Atualiza ou Adiciona a imagem de um jogo
+
+POST http://localhost:3001/games/upload/:game_id
+
+### GET Acessa a arquivos estáticos contidos na pasta /uploads do projeto backend
+
+GET http://localhost:3001/files/:image_name

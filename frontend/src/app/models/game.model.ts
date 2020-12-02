@@ -5,5 +5,6 @@ export interface Game {
     developer: string,
     genre: string,
     type: string,
-    rating: any;
+    imgPath?: string,    
+    rating: number
 }
