@@ -1,17 +1,30 @@
-module.exports = app => {
-    const game = require('../controllers/game.controller');
-    let router = require('express').Router();
+const multer = require("multer");
+const path = require("path");
 
-    router.post('/', game.create);
-    
-    router.get('/:id', game.findOne);
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, "..", "uploads"),
+  filename(req, file = {}, cb) {
+    const { originalname } = file;
+    const fileExtension = (originalname.match(/\.+[\S]+$/) || [])[0];
+    cb(null, `${file.fieldname}__${Date.now()}${fileExtension}`);
+  },
+});
+const upload = multer({ storage });
+module.exports = (app) => {
+  const game = require("../controllers/game.controller");
+  let router = require("express").Router();
 
-    router.get('/', game.findAll);
+  router.post("/", game.create);
 
-    router.put('/:id', game.update);
+  router.get("/:id", game.findOne);
 
-    router.delete('/:id', game.delete);
+  router.get("/", game.findAll);
 
-    app.use('/games', router);
+  router.put("/:id", game.update);
 
+  router.delete("/:id", game.delete);
+
+  router.post("/upload/:id", upload.single("image"), game.upload);
+
+  app.use("/games", router);
 };
