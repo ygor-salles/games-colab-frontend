@@ -6,6 +6,8 @@ module.exports = app => {
     
     router.get('/:id', game.findOne);
 
+    router.get('/most_rated/:type', game.mostRated);
+
     router.get('/', game.findAll);
 
     router.put('/:id', game.update);
