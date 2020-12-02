@@ -6,49 +6,44 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  hide = true;
-  usuario = { email: '', password: '' }
-  consultaUser: any
+    hide = true;
+    usuario = { email: '', password: '' }
 
-  constructor(
-    private router: Router,
-    private appComponent: AppComponent,
-    private userService: UserService,
-    private authService: AuthService
-  ) { }
+    constructor(
+        private router: Router,
+        private appComponent: AppComponent,
+        private userService: UserService,
+        private authService: AuthService
+    ) { }
 
-  ngOnInit(): void {
-  }
-
-  fazerLogin() {
-    let body = {
-        email: this.usuario.email,
-        password: this.usuario.password
+    ngOnInit(): void {
     }
-    this.consultaUser = this.userService.login(body).subscribe()
 
-    if(this.consultaUser == undefined)
-      this.userService.showMessage('Usuário ou senha incorreto')
-    else{
-      this.authService.auth(this.consultaUser.name)
-      this.router.navigate(['/'])
-      this.appComponent.mostrarMenu = true
+    fazerLogin() {
+        let body = {
+            email: this.usuario.email,
+            password: this.usuario.password
+        }
+        this.userService.login(body).subscribe(user => {
+            this.authService.auth(user.name)
+            this.router.navigate(['/'])
+            this.appComponent.mostrarMenu = true
+        });
     }
-  }
 
-  voltarHome() {
-    this.router.navigate(['/'])
-    this.appComponent.mostrarMenu = true
-  }
+    voltarHome() {
+        this.router.navigate(['/'])
+        this.appComponent.mostrarMenu = true
+    }
 
-  registrar() {
-    this.appComponent.mostrarMenu = true
-  }
+    registrar() {
+        this.appComponent.mostrarMenu = true
+    }
 
 }

@@ -16,6 +16,10 @@ module.exports = (app) => {
 
   router.post("/", game.create);
 
+  router.get("/most_rated/:type", game.mostRated);
+
+  router.get("/", game.findAll);
+
   router.get("/:id", game.findOne);
 
   router.get("/", game.findAll);

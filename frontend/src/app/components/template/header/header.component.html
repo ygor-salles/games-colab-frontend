@@ -23,6 +23,8 @@
             <button mat-menu-item (click)="sair()">Sair</button>
         </mat-menu>
     </div>
-    <span *ngIf="userAuth==''">Logar</span>
-    <span *ngIf="userAuth!=''">{{ userAuth }}</span>
+    <div class="login">
+        <span *ngIf="userAuth==''">Logar</span>
+        <span *ngIf="userAuth!=''">{{ userAuth }}</span>
+    </div>
   </mat-toolbar>
