@@ -16,7 +16,8 @@ export class GameCreateComponent implements OnInit {
     summary: '',
     developer: '',
     genre: '',
-    type: ''
+    type: '',
+    rating: ''
   }
 
   types = ['pc', 'xbox', 'switch', 'playstation']

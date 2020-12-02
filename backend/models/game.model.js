@@ -7,6 +7,7 @@ module.exports = (mongoose) => {
     developer: String,
     genre: String,
     imgPath: String,
+    rating: Number,
     __v: {
       type: Number,
       select: false,

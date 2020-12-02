@@ -1,7 +1,8 @@
 const db = require('../models')
 const Rating = db.rating;
+const Game = db.game;
 
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
     // Validate request
     if (!req.body.rate || !req.body.comment || !req.body.game_id) {
         res
@@ -16,6 +17,8 @@ exports.create = (req, res) => {
         comment: req.body.comment,
         game_id: req.body.game_id
     });
+
+    await updateRating({ rating: req.body.rate, game_id: rating.game_id });
 
     // Save rating in the database
     rating
@@ -90,7 +93,7 @@ exports.update = (req, res) => {
 
     Rating
         .findByIdAndUpdate(id, req.body)
-        .then(data => {
+        .then(async data => {
             if (!data) {
                 res
                     .status(404)
@@ -98,6 +101,8 @@ exports.update = (req, res) => {
                         message: `Não foi possível encontrar uma avaliação com o ID ${id}. Talvez a avaliação não exista!`
                     });
             } else {
+                if ('rate' in req.body) await updateRating({ rating: req.body.rate, game_id: data.game_id });
+
                 res.send({
                     message: "Avaliação atualizada com sucesso."
                 });
@@ -138,3 +143,12 @@ exports.delete = (req, res) => {
                 });
         });
 }; 
+
+async function updateRating({ rating, game_id } = {}) {
+    Game
+        .findById(game_id)
+        .then(async data => {
+            const newRatingGame = (data.rating+rating) / 2;
+            await Game.findByIdAndUpdate(game_id, { rating: newRatingGame })
+        });
+}

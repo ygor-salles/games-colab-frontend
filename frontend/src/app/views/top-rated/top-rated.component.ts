@@ -1,3 +1,4 @@
+import { HeaderService } from './../../components/template/header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
 import { Game } from 'src/app/models/game.model';
@@ -12,8 +13,13 @@ export class TopRatedComponent implements OnInit {
   firstGame: any;
   secondGame: any;
   thirdGame: any;
-  constructor(private gameService: GameService) { 
   
+  constructor(private gameService: GameService, private headerService: HeaderService) { 
+    headerService.headerData = {
+      title: 'Top games',
+      icon: 'star_border',
+      routeUrl: '/top'
+    }
   }
 
   ngOnInit(): void {

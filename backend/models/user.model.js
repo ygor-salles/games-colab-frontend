@@ -18,8 +18,7 @@ module.exports = (mongoose) => {
         password: {
             type: String,
             required: true,
-            trim: true,
-            select: false
+            trim: true
         },
         __v: {
             type: Number,

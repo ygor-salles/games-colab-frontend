@@ -93,10 +93,7 @@ exports.login = (req, res) => {
             } else {
                 res
                     .status(200)
-                    .send({
-                        message: "Acesso autenticado!",
-                        user
-                    });
+                    .send(user);
             }
         })
         .catch(err => {

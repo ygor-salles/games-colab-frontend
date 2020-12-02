@@ -47,6 +47,7 @@ export class GameService {
     );
   }
 
+  //teste
   readById(_id: string): Observable<Game> {
     const url = `${this.baseUrl}/${_id}`;
     return this.http.get<Game>(url).pipe(
