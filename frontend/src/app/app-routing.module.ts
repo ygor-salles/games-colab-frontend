@@ -65,7 +65,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: "top",
+    path: "top/:plataforma",
     component: TopRatedComponent
   },
   {
