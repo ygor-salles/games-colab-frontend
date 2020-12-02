@@ -1,7 +1,7 @@
 <div class="container-wrapper">
   <div class="card-wrapper">
     <div class="card">
-      <img src="https://store-images.s-microsoft.com/image/apps.31281.64256825846959382.44b5bc43-437a-4414-83ca-b41ba9e7764a.86abb8aa-f419-4a90-b6aa-cf79b4228f06" alt="Avatar" style="width:100%">
+      <img src="{{firstGame.imgPath ? 'http://localhost:3001/files/' + firstGame.imgPath : 'https://store-images.s-microsoft.com/image/apps.31281.64256825846959382.44b5bc43-437a-4414-83ca-b41ba9e7764a.86abb8aa-f419-4a90-b6aa-cf79b4228f06'}}" alt="Avatar" style="width:100%">
       <div class="container">
         <h4><b>{{firstGame.title}}</b></h4> 
         <!-- <p>{{firstGame.summary}}</p>  -->
@@ -16,7 +16,7 @@
   </div>
   <div class="card-wrapper">
     <div class="card">
-      <img src="https://store-images.s-microsoft.com/image/apps.31281.64256825846959382.44b5bc43-437a-4414-83ca-b41ba9e7764a.86abb8aa-f419-4a90-b6aa-cf79b4228f06" alt="Avatar" style="width:100%">
+      <img src="{{secondGame.imgPath ? 'http://localhost:3001/files/' + secondGame.imgPath : 'https://store-images.s-microsoft.com/image/apps.31281.64256825846959382.44b5bc43-437a-4414-83ca-b41ba9e7764a.86abb8aa-f419-4a90-b6aa-cf79b4228f06'}}"  alt="Avatar" style="width:100%">
       <div class="container">
         <h4><b>{{secondGame.title}}</b></h4> 
         <!-- <p>{{secondGame.summary}}</p>  -->
@@ -30,7 +30,7 @@
   </div>
   <div class="card-wrapper">
     <div class="card">
-      <img src="https://store-images.s-microsoft.com/image/apps.31281.64256825846959382.44b5bc43-437a-4414-83ca-b41ba9e7764a.86abb8aa-f419-4a90-b6aa-cf79b4228f06" alt="Avatar" style="width:100%">
+      <img src="{{thirdGame.imgPath ? 'http://localhost:3001/files/' + thirdGame.imgPath : 'https://store-images.s-microsoft.com/image/apps.31281.64256825846959382.44b5bc43-437a-4414-83ca-b41ba9e7764a.86abb8aa-f419-4a90-b6aa-cf79b4228f06'}}"  alt="Avatar" style="width:100%">
       <div class="container">
         <h4><b>{{thirdGame.title}}</b></h4> 
         <!-- <p>{{thirdGame.summary}}</p>  -->
