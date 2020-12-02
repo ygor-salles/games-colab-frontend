@@ -32,7 +32,9 @@ export class UserService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage('Ocorreu um erro!', true)
+    let message = 'Ocorreu um erro!'
+    if (e.error.message) message = e.error.message
+    this.showMessage(message, true)
     return EMPTY
   }
 
@@ -43,8 +45,8 @@ export class UserService {
     )
   }
   
-  login(body: any): Observable<User[]> {
-    return this.http.post<User[]>(`${this.baseUrl}/login`, body).pipe(
+  login(body: any): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}/login`, body).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )
