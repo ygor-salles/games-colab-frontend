@@ -55,6 +55,13 @@ export class GameService {
     );
   }
 
+  gameByConsole(plataforma): Observable<Game[]> {
+    return this.http.get<Game[]>(`${this.baseUrl}/most_rated/${plataforma}`).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
   //teste
   readById(_id: string): Observable<Game> {
     const url = `${this.baseUrl}/${_id}`;

@@ -1,6 +1,7 @@
 import { HeaderService } from './../../components/template/header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-top-rated',
@@ -12,8 +13,9 @@ export class TopRatedComponent implements OnInit {
   firstGame: any;
   secondGame: any;
   thirdGame: any;
+  plataforma: any
   
-  constructor(private gameService: GameService, private headerService: HeaderService) { 
+  constructor(private route: ActivatedRoute,private gameService: GameService, private headerService: HeaderService) { 
     headerService.headerData = {
       title: 'Top games',
       icon: 'star_border',
@@ -22,14 +24,13 @@ export class TopRatedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.gameService.read().subscribe((games) => {
-      this.options = games.sort((gameA, gameB)=>{
-        return gameB?.rating - gameA?.rating
-      })
-      this.firstGame = this.options[0]
-      this.secondGame = this.options[1]
-      this.thirdGame = this.options[2]
-  });
+    this.plataforma = this.route.snapshot.paramMap.get('plataforma')
+    this.gameService.gameByConsole(this.plataforma).subscribe(games => {
+      console.log(games)
+      this.firstGame = games[0]
+      this.secondGame = games[1]
+      this.thirdGame = games[2]
+    })
   }
 
 }
