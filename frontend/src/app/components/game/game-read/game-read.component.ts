@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class GameReadComponent implements OnInit {
 
   games: Game[]
-  displayedColumns = ['title', 'summary', 'developer', 'genre', 'action'];
+  displayedColumns = ['title', 'summary', 'developer', 'genre', 'type', 'action'];
   
   constructor(private gameService: GameService) { }
 

@@ -7,7 +7,11 @@ table {
 }
 
 .edit > i {
-    color: #d9cd26;
+    color: #06d6a0;
+}
+
+.delete {
+    margin-right: 10px;
 }
 
 .delete > i {

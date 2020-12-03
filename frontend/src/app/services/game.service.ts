@@ -41,7 +41,7 @@ export class GameService {
     //let params = new HttpParams();
     //params = params.append('type', 'playstation');
 
-    return this.http.get<Game[]>(`${this.baseUrl}?type=playstation`).pipe(
+    return this.http.get<Game[]>(`${this.baseUrl}`).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
