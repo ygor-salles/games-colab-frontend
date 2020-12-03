@@ -12,7 +12,7 @@ const app = express();
 // Parsers for POST data
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: "1mb" }));
 
 // Cross Origin middleware
 app.use(function (req, res, next) {

@@ -26,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatAutocompleteModule } from '@angular/material/autocomplete'; 
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 //Componentes Criados
 import { HeaderComponent } from './components/template/header/header.component';
@@ -101,7 +102,8 @@ registerLocaleData(localePt);
     MatIconModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatProgressBarModule
   ],
   providers: [
     {

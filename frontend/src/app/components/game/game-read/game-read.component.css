@@ -17,3 +17,7 @@ table {
 .delete > i {
     color: #e35e6b;
 }
+
+td {
+    width: calc(100%/6);
+}

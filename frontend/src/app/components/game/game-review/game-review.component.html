@@ -1,5 +1,8 @@
 <mat-card class="details-game">
-    <mat-card-title>Você está avaliando o jogo "{{gameTitle}}"</mat-card-title>
+    <mat-card-title class="card-with-button">Você está visualizando o jogo "{{gameTitle}}"</mat-card-title>
+    <button class="button-in-title" mat-raised-button (click)="backToGames()" color="basic">
+        Voltar para lista de jogos
+    </button>
 </mat-card>
 
 <mat-divider [inset]="true"></mat-divider>

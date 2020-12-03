@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
 
     registrar() {
         this.appComponent.mostrarMenu = true
+        this.router.navigate(['users/create'])
     }
 
 }

@@ -1,6 +1,7 @@
 import { DialogComponent } from './dialog/dialog.component';
 import { Game } from './../models/game.model';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpErrorResponse, HttpEventType  } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -16,6 +17,13 @@ export class GameService {
   baseUrl = 'http://localhost:3001/games'
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient, private dialog: MatDialog) {}
+
+  upload(formData) {
+    return this.http.post<any>(`${this.baseUrl}/upload/`, formData, {  
+        reportProgress: true,  
+        observe: 'events'  
+      });  
+  }
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {
@@ -84,4 +92,3 @@ export class GameService {
     return EMPTY;
   }
 }
-

@@ -23,6 +23,19 @@
             <!--<input matInput placeholder="Gênero"
                 [(ngModel)]="game.genre" name="genre">-->
         </mat-form-field>
+
+        <mat-form-field>
+            <div>
+              <mat-toolbar>
+                <!-- Display files names -->
+                <input matInput [(ngModel)]="fileAttr"  name="name" />
+              </mat-toolbar>
+          
+              <!-- Fetch selected filed on change -->
+              <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple"
+                accept="image/*" />
+            </div>
+        </mat-form-field>
     </form>
     <button mat-raised-button (click)="updateGame()" color="primary">
         Atualizar
