@@ -1,5 +1,5 @@
 <mat-card>
-    <mat-card-title>Novo Game</mat-card-title>
+    <mat-card-title>Novo Jogo</mat-card-title>
     <form>
         <mat-form-field>
             <input matInput placeholder="Titulo" [(ngModel)]="game.title" name="title">
@@ -26,6 +26,19 @@
                     {{ type }}
                 </mat-option>
             </mat-select>
+        </mat-form-field>
+        <!-- Image Upload Field -->
+        <mat-form-field>
+            <div>
+              <mat-toolbar>
+                <!-- Display files names -->
+                <input matInput [(ngModel)]="fileAttr"  name="name" />
+              </mat-toolbar>
+          
+              <!-- Fetch selected filed on change -->
+              <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple"
+                accept="image/*" />
+            </div>
         </mat-form-field>
     </form>
     <button mat-raised-button (click)="createGame()" color="primary">

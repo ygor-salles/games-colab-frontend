@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Game } from 'src/app/models/game.model';
 import { GameService } from 'src/app/services/game.service';
@@ -11,6 +11,9 @@ import { GameService } from 'src/app/services/game.service';
 export class GameUpdateComponent implements OnInit {
   game: Game = {} as Game;
   genres = ['Ação', 'Aventura', 'Estratégia', 'RPG', 'Esporte', 'Simulação']
+  fileAttr = 'Choose File';
+
+  @ViewChild("fileUpload", {static: false}) fileUpload: ElementRef;files  = [];  
 
   constructor(
     private gameService: GameService,
@@ -24,6 +27,32 @@ export class GameUpdateComponent implements OnInit {
       this.game = game;
     });
   }
+
+  uploadFileEvt(imgFile: any) {
+    if (imgFile.target.files && imgFile.target.files[0]) {
+      this.fileAttr = '';
+      Array.from(imgFile.target.files).forEach((file: File) => {
+        this.fileAttr += file.name + ' - ';
+      });
+
+      // HTML5 FileReader API
+      let reader = new FileReader();
+      reader.onload = (e: any) => {
+        let image = new Image();
+        image.src = e.target.result;
+        image.onload = rs => {
+          const imgBase64Path = e.target.result;
+          this.game.imgPath = imgBase64Path
+        };
+      };
+      reader.readAsDataURL(imgFile.target.files[0]);
+      
+      // Reset if duplicate image uploaded again
+      this.fileUpload.nativeElement.value = "";
+    } else {
+      this.fileAttr = 'Choose File';
+    }
+  } 
 
   updateGame(): void {
     this.gameService.update(this.game).subscribe(() => {

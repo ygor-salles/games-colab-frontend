@@ -48,6 +48,8 @@ export class HeaderComponent implements OnInit {
   sair() {
     this.authService.auth('')
     this.userAuth = ''
+    this.appComponent.mostrarMenu = false
+    this.router.navigate(['login'])
   }
 
 }

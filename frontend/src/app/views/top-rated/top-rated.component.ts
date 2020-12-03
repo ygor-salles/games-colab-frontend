@@ -1,7 +1,6 @@
 import { HeaderService } from './../../components/template/header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
-import { Game } from 'src/app/models/game.model';
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -26,7 +25,6 @@ export class TopRatedComponent implements OnInit {
 
   ngOnInit(): void {
     this.plataforma = this.route.snapshot.paramMap.get('plataforma')
-    console.log('plataforma', this.plataforma)
     this.gameService.gameByConsole(this.plataforma).subscribe(games => {
       console.log(games)
       this.firstGame = games[0]
