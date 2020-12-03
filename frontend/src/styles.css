@@ -3,3 +3,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a {
+    color: #ffffff;
+    text-decoration: none; /* no underline */
+}
+
+.card-with-button {
+    width: 83% !important;
+}
+
+.button-in-title {
+    margin: 0 !important;
+    background-color: #ffffff;
+    color: black;
+}

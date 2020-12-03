@@ -5,6 +5,7 @@ import { UserReadComponent } from './components/user/user-read/user-read.compone
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UsersCrudComponent } from './views/users-crud/users-crud.component';
 import { GameUpdateComponent } from './components/game/game-update/game-update.component';
+import { ReviewReadComponent } from './components/game/game-review/game-review.component';
 import { GameReadComponent } from './components/game/game-read/game-read.component';
 import { GameCreateComponent } from './components/game/game-create/game-create.component';
 import { NgModule } from '@angular/core';
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: "games/update/:id",
     component: GameUpdateComponent
+  },
+  {
+    path: "games/review/:id",
+    component: ReviewReadComponent
   },
   {
     path: "users",

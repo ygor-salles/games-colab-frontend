@@ -40,6 +40,7 @@ import { GameReadComponent } from './components/game/game-read/game-read.compone
 import { GameDeleteComponent } from './components/game/game-delete/game-delete.component';
 import { DialogComponent } from './services/dialog/dialog.component';
 import { GameUpdateComponent } from './components/game/game-update/game-update.component';
+import { ReviewReadComponent } from './components/game/game-review/game-review.component';
 import { UsersCrudComponent } from './views/users-crud/users-crud.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UserReadComponent } from './components/user/user-read/user-read.component';
@@ -68,6 +69,7 @@ registerLocaleData(localePt);
     GameDeleteComponent,
     DialogComponent,
     GameUpdateComponent,
+    ReviewReadComponent,
     UsersCrudComponent,
     UserCreateComponent,
     UserReadComponent,
