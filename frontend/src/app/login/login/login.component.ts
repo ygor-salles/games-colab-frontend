@@ -1,9 +1,8 @@
-import { AuthService } from './../../services/auth.service';
-import { User } from './../../models/users.model';
 import { UserService } from './../../services/user.service';
 import { AppComponent } from './../../app.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderService } from 'src/app/components/template/header/header.service';
 
 @Component({
     selector: 'app-login',
@@ -19,7 +18,7 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private appComponent: AppComponent,
         private userService: UserService,
-        private authService: AuthService
+        private headerService: HeaderService
     ) { }
 
     ngOnInit(): void {
@@ -31,19 +30,13 @@ export class LoginComponent implements OnInit {
             password: this.usuario.password
         }
         this.userService.login(body).subscribe(user => {
-            this.authService.auth(user.name)
-            this.router.navigate(['/'])
-            this.appComponent.mostrarMenu = true
+            this.headerService.headerData.username = user.name
+            localStorage.setItem('currentUser', user.name);
+            this.appComponent.redirectFromLoginToHome()
         });
     }
 
-    voltarHome() {
-        this.router.navigate(['/'])
-        this.appComponent.mostrarMenu = true
-    }
-
     registrar() {
-        this.appComponent.mostrarMenu = true
         this.router.navigate(['users/create'])
     }
 

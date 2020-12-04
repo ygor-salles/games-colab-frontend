@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class ConsolesComponent implements OnInit {
 
   constructor(private headerService: HeaderService) {
-    headerService.headerData = {
+    Object.assign(headerService.headerData, {
       title: 'Escolha do console',
       icon: 'videogame_asset',
       routeUrl: '/consoles'
-    }
+    })
   }
 
   ngOnInit(): void {

@@ -8,7 +8,7 @@
         <a>
             <i class="material-icons">
                 {{ icon }}
-            </i> 
+            </i>
             {{ title }}
         </a>
     </span>
@@ -18,13 +18,12 @@
             <mat-icon>login</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="autenticar()">Fazer login</button>
-            <button mat-menu-item (click)="registrar()">Registrar</button>
-            <button mat-menu-item (click)="sair()">Sair</button>
+            <button *ngIf="username==null" mat-menu-item (click)="autenticar()">Fazer login</button>
+            <button *ngIf="username==null" mat-menu-item (click)="registrar()">Registrar</button>
+            <button *ngIf="username!=null" mat-menu-item (click)="sair()">Sair</button>
         </mat-menu>
     </div>
     <div class="login">
-        <span *ngIf="userAuth==''">Logar</span>
-        <span *ngIf="userAuth!=''">{{ userAuth }}</span>
+        <span>{{ username == null ? 'Logar' : username}}</span>
     </div>
-  </mat-toolbar>
+</mat-toolbar>

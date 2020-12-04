@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './../../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Review } from 'src/app/models/review.model';
 import { ReviewService } from 'src/app/services/review.service';
 import { GameService } from 'src/app/services/game.service';
+import { HeaderService } from '../../template/header/header.service';
 
 @Component({
     selector: 'app-game-review',
@@ -12,7 +12,6 @@ import { GameService } from 'src/app/services/game.service';
 })
 
 export class ReviewReadComponent implements OnInit {
-    userAuth: string;
     gameTitle: string;
     reviews: Review[];
     review: Review = {} as Review;
@@ -23,11 +22,20 @@ export class ReviewReadComponent implements OnInit {
         private gameService: GameService,
         private router: Router,
         private route: ActivatedRoute,
-        private authService: AuthService
-    ) { }
+        private headerService: HeaderService
+    ) {
+        Object.assign(headerService.headerData, {
+            title: 'Avaliação de Game',
+            icon: 'grade',
+            routeUrl: '/games'
+        })
+    }
+
+    get username(): string {
+        return this.headerService.headerData.username
+    }
 
     ngOnInit(): void {
-        this.userAuth = this.authService.usuarioAutenticado
         this.review.game_id = this.route.snapshot.paramMap.get('id');
         this.gameService.readById(this.review.game_id).subscribe(game => {
             this.gameTitle = game.title

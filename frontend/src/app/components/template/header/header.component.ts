@@ -1,55 +1,53 @@
-import { AuthService } from './../../../services/auth.service';
 import { AppComponent } from './../../../app.component';
 import { Router } from '@angular/router';
 import { HeaderService } from './header.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
-  userAuth: string
+    constructor(
+        private headerService: HeaderService,
+        private router: Router,
+        private appComponent: AppComponent
+    ) { }
 
-  constructor(
-    private headerService: HeaderService, 
-    private router: Router, 
-    private appComponent: AppComponent,
-    private authService: AuthService
-  ) { }
+    ngOnInit(): void {
+    }
 
-  ngOnInit(): void {
-    this.userAuth = this.authService.usuarioAutenticado
-  }
+    get title(): string {
+        return this.headerService.headerData.title
+    }
 
-  get title(): string {
-    return this.headerService.headerData.title
-  }
+    get icon(): string {
+        return this.headerService.headerData.icon
+    }
 
-  get icon(): string {
-    return this.headerService.headerData.icon
-  }
+    get routeUrl(): string {
+        return this.headerService.headerData.routeUrl
+    }
 
-  get routeUrl(): string {
-    return this.headerService.headerData.routeUrl
-  }
+    get username(): string {
+        return this.headerService.headerData.username
+    }
 
-  registrar() {
-    this.router.navigate(['users/create'])
-  }
+    registrar() {
+        this.router.navigate(['users/create'])
+    }
 
-  autenticar() {
-    this.appComponent.mostrarMenu = false
-    this.router.navigate(['login'])
-  }
+    autenticar() {
+        this.headerService.headerData.username = null
+        localStorage.removeItem('currentUser')
+        this.appComponent.redirectFromLoginToHome()
+    }
 
-  sair() {
-    this.authService.auth('')
-    this.userAuth = ''
-    this.appComponent.mostrarMenu = false
-    this.router.navigate(['login'])
-  }
+    sair() {
+        this.headerService.headerData.username = null
+        localStorage.removeItem('currentUser')
+    }
 
 }

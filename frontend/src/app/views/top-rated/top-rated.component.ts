@@ -17,11 +17,11 @@ export class TopRatedComponent implements OnInit {
   plataforma: any
   
   constructor(private route: ActivatedRoute,private gameService: GameService, private headerService: HeaderService) { 
-    headerService.headerData = {
+    Object.assign(headerService.headerData, {
       title: 'Top games',
       icon: 'star_border',
       routeUrl: '/top'
-    }
+    })
   }
 
   ngOnInit(): void {

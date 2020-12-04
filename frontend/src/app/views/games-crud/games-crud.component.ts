@@ -8,16 +8,20 @@ import { Router } from '@angular/router';
     styleUrls: ['./games-crud.component.css']
 })
 export class GamesCrudComponent implements OnInit {
-    
-    constructor(private router: Router, private headerService: HeaderService) {
-        this.headerService.headerData = {
+
+    constructor(
+        private router: Router,
+        private headerService: HeaderService
+    ) {
+        Object.assign(headerService.headerData, {
             title: 'Cadastro de Games',
             icon: 'sports_esports',
             routeUrl: '/games'
-        }
+        })
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+    }
 
     navigateToGameCreate() {
         this.router.navigate(['/games/create'])
