@@ -16,7 +16,6 @@ exports.create = (req, res) => {
         summary: req.body.summary,
         developer: req.body.developer,
         genre: req.body.genre,
-        rating: req.body.rating,
         imgPath: req.body.imgPath,
         user_id: req.body.user_id
     });
