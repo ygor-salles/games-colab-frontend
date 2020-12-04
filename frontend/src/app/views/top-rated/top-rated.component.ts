@@ -31,8 +31,6 @@ export class TopRatedComponent implements OnInit {
       this.firstGame = games[0] || null
       this.secondGame = games[1]  || null
       this.thirdGame = games[2] || null
-
-      console.log('this.firstGame', this.firstGame)
     })
   }
 
