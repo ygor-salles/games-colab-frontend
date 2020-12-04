@@ -1,5 +1,5 @@
 <mat-card class="mat-elevation-z8">
-    <mat-card-title>Buscar jogo por titulo, desenvolvedor, console, gênero</mat-card-title>
+    <mat-card-title>Buscar jogo </mat-card-title>
     <form>
         <mat-form-field>
             <mat-label>Filtro</mat-label>
@@ -15,7 +15,7 @@
     </form>
 </mat-card>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" class="example-container">
 
     <table *ngIf="statusTable" mat-table [dataSource]="games" class="mat-elevation-z8">
 
@@ -24,7 +24,7 @@
             <th mat-header-cell *matHeaderCellDef> Capa </th>
             <td mat-cell *matCellDef="let row">
                 <a routerLink="/games/review/{{ row._id }}">
-                    <img src="{{row.imgPath}}" height="300" width="300" />
+                    <img src="{{row.imgPath}}" height="120" width="120" />
                 </a>
             </td>
         </ng-container>
@@ -82,7 +82,7 @@
             </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
         <!-- Row shown when there is no matching data. -->
@@ -98,7 +98,7 @@
             <th mat-header-cell *matHeaderCellDef> Capa </th>
             <td mat-cell *matCellDef="let row">
                 <a routerLink="/games/review/{{ row._id }}">
-                    <img src="{{row.imgPath}}" height="300" width="300" />
+                    <img src="{{row.imgPath}}" height="120" width="120" />
                 </a>
             </td>
         </ng-container>
@@ -156,7 +156,7 @@
             </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
         <!-- Row shown when there is no matching data. -->
