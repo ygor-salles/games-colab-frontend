@@ -4,3 +4,7 @@
         Sistema colaborativo para cadastramento, avaliação e consulta de jogos
     </mat-card-subtitle>
 </mat-card>
+
+<div *ngIf="username==null">
+    <app-login></app-login>
+</div>

@@ -1,8 +1,6 @@
 .tela {
     background-image: url('../../../assets/img/783472.jpg');
-    width: 100vw;
-    height: 100vh;
-    /*background: #6C7A89;*/
+    height: 73vh;
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -19,7 +19,8 @@ import { ConsolesComponent } from "./views/consoles/consoles.component";
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: HomeComponent,
+    runGuardsAndResolvers: 'always'
   },
   {
     path: "games",
@@ -84,7 +85,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -18,11 +18,11 @@ export class GamesCrudComponent implements OnInit {
     filteredOptions: Observable<Game[]>;
 
     constructor(private gameService: GameService, private router: Router, private headerService: HeaderService) {
-        headerService.headerData = {
+        Object.assign(headerService.headerData, {
             title: 'Cadastro de Games',
             icon: 'sports_esports',
             routeUrl: '/games'
-        }
+        })
     }
 
     ngOnInit(): void {

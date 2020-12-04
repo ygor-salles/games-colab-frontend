@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 export class UsersCrudComponent implements OnInit {
 
   constructor(private router: Router, private headerService: HeaderService) {
-    headerService.headerData = {
+    Object.assign(headerService.headerData, {
       title: 'Cadastro de Usuários',
       icon: 'person',
       routeUrl: '/users'
-    }
+    })
   }
 
   ngOnInit(): void {
