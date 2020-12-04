@@ -17,7 +17,8 @@ Content-Type: application/json
     "summary": "God of War é uma série de jogos eletrônicos de ação-aventura vagamente baseado nas mitologias grega e nórdica sendo criado originalmente por David Jaffe da Santa Monica Studio. Iniciada em 2005, a série tornou-se carro-chefe para a marca PlayStation, que consiste em oito jogos em várias plataformas.",
     "developer": "Santa Mônica",
     "rating": 1,
-    "genre": "RPG"
+    "genre": "RPG",
+    "user_id": "5fc2961bd4f97c012d861498"
 }
 
 ### UPDATE

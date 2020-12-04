@@ -1,17 +1,28 @@
+<div class="header-button">    
+    <button mat-raised-button color="primary">
+        <a routerLink="/consoles">Escolher outro console</a>
+    </button>
+
+    <button mat-raised-button color="primary">
+        <a routerLink="/games">Ver mais jogos</a>
+    </button>    
+</div>
+
 <div class="container-wrapper">
 	<div *ngIf="!firstGame && !secondGame && !thirdGame">
 		Desculpe, não temos jogos para essa plataforma :(
 	</div>
-	<a routerLink="/games" class="butao">Ver mais jogos</a>
+
 	<div *ngIf="firstGame"  routerLink="/games/review/{{firstGame?._id}}" class="card-wrapper">
 		<div class="card">
-			<img src="{{ 	firstGame?.imgPath 		? firstGame.imgPath 		: 'https://store-images.s-microsoft.com/image/apps.31281.64256825846959382.44b5bc43-437a-4414-83ca-b41ba9e7764a.86abb8aa-f419-4a90-b6aa-cf79b4228f06' }}" alt="Avatar" style="width: 100%"/>
+			<img src="{{ 	firstGame?.imgPath 		? firstGame.imgPath 		: 'http://radioingamar.com.br/portal/img/not-found.png' }}" alt="Avatar" style="width: 100%"/>
 			<div class="container">
 				<h4>
 					<b style="padding-left: .4em;">{{ firstGame?.title }}</b>
 				</h4>
 				<b style="padding-left: .4em; font-size: .8em; margin-bottom: 0;">Gênero: {{ firstGame?.genre }}</b><br>
 				<b style="padding-left: .4em; font-size: .8em; margin-bottom: 0;">Nota: {{ firstGame?.rating }} </b><br>
+				<b style="padding-left: .4em; font-size: .8em; margin-bottom: 0;">Desenvolvedor: {{ firstGame?.developer }} </b><br>
 				<p style="padding-left: .4em;"><b>Descrição: </b>{{ firstGame?.summary }}</p>
 			</div>
 		</div>
@@ -28,7 +39,7 @@
 				src="{{
 					secondGame && secondGame.imgPath
 						? secondGame.imgPath
-						: 'https://store-images.s-microsoft.com/image/apps.31281.64256825846959382.44b5bc43-437a-4414-83ca-b41ba9e7764a.86abb8aa-f419-4a90-b6aa-cf79b4228f06'
+						: 'http://radioingamar.com.br/portal/img/not-found.png'
 				}}"
 				alt="Avatar"
 				style="width: 100%"
@@ -38,7 +49,8 @@
 					<b style="padding-left: .4em;">{{ secondGame?.title }}</b>
 				</h4>
 				<b style="padding-left: .4em; font-size: .8em; margin-bottom: 0;">Gênero: {{ secondGame?.genre }}</b><br>
-				<b style="padding-left: .4em;font-size: .8em; margin-bottom: 0;">Nota: {{ secondGame?.rating }} </b><br>
+                <b style="padding-left: .4em;font-size: .8em; margin-bottom: 0;">Nota: {{ secondGame?.rating }} </b><br>
+				<b style="padding-left: .4em; font-size: .8em; margin-bottom: 0;">Desenvolvedor: {{ firstGame?.developer }} </b><br>
 				<p style="padding-left: .4em;"><b>Descrição: </b>{{ secondGame?.summary }}</p>
 			</div>
 		</div>
@@ -62,7 +74,7 @@
 				src="{{
 					thirdGame?.imgPath
 						? thirdGame.imgPath
-						: 'https://store-images.s-microsoft.com/image/apps.31281.64256825846959382.44b5bc43-437a-4414-83ca-b41ba9e7764a.86abb8aa-f419-4a90-b6aa-cf79b4228f06'
+						: 'http://radioingamar.com.br/portal/img/not-found.png'
 				}}"
 				alt="Avatar"
 				style="width: 100%"
@@ -72,7 +84,8 @@
 					<b style="padding-left: .4em;">{{ thirdGame?.title }}</b>
 				</h4>
 				<b style="padding-left: .4em; font-size: .8em; margin-bottom: 0;">Gênero: {{ thirdGame?.genre }}</b><br>
-				<b style="padding-left: .4em; font-size: .8em; margin-bottom: 0;">Nota: {{ thirdGame?.rating }} </b><br>
+                <b style="padding-left: .4em; font-size: .8em; margin-bottom: 0;">Nota: {{ thirdGame?.rating }} </b><br>
+				<b style="padding-left: .4em; font-size: .8em; margin-bottom: 0;">Desenvolvedor: {{ firstGame?.developer }} </b><br>
 				<p style="padding-left: .4em;"><b>Descrição: </b>{{ thirdGame?.summary }}</p>
 			</div>
 		</div>

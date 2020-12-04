@@ -11,7 +11,7 @@ export class HeaderService {
         title: 'Sistema colaborativo de Jogos',
         icon: '',
         routeUrl: '',
-        username: localStorage.getItem('currentUser')
+        username: JSON.parse(localStorage.getItem('currentUser')).name
     })
 
     constructor() { }

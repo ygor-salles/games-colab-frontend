@@ -1,12 +1,17 @@
 @import '@angular/material/prebuilt-themes/purple-green.css';
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 a {
     color: #ffffff;
-    text-decoration: none; /* no underline */
+    text-decoration: none;
 }
 
 .card-with-button {
@@ -16,5 +21,33 @@ a {
 .button-in-title {
     margin: 0 !important;
     background-color: #ffffff;
-    color: black;
+    color: black !important;
+}
+
+.mat-focused .mat-form-field-label, .mat-form-field-infix {
+    color: #ffffff !important;
+}
+
+.mat-form-field-underline {
+    background-color: #ffffff !important;
+}
+
+.mat-form-field-ripple {
+    background-color: #ffffff !important;
+}
+
+.mat-input-element {
+    caret-color: #ffffff !important;
+}
+
+span:has(:not(.button-in-title)), input {
+    color: #ffffff;
+}
+
+.msg-error {
+    background-color: #ff595e !important;
+}
+
+.msg-success {
+    background-color: #8ac926 !important;
 }

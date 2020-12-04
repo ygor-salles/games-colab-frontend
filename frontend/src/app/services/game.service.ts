@@ -46,9 +46,6 @@ export class GameService {
   }
 
   read(): Observable<Game[]> {
-    //let params = new HttpParams();
-    //params = params.append('type', 'playstation');
-
     return this.http.get<Game[]>(`${this.baseUrl}`).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))

@@ -2,16 +2,14 @@
     <mat-card-title>Alterar Jogo</mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Titulo"
-                [(ngModel)]="game.title" name="title">
+            <input matInput placeholder="Titulo" [(ngModel)]="game.title" name="title">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Resumo</mat-label>
             <textarea matInput [(ngModel)]="game.summary" name="summary"></textarea>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Desenvolvedor"
-                [(ngModel)]="game.developer" name="developer">
+            <input matInput placeholder="Desenvolvedor" [(ngModel)]="game.developer" name="developer">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Gênero</mat-label>
@@ -20,27 +18,15 @@
                     {{ genre }}
                 </mat-option>
             </mat-select>
-            <!--<input matInput placeholder="Gênero"
-                [(ngModel)]="game.genre" name="genre">-->
         </mat-form-field>
-
-        <mat-form-field>
-            <div>
-              <mat-toolbar>
-                <!-- Display files names -->
-                <input matInput [(ngModel)]="fileAttr"  name="name" />
-              </mat-toolbar>
-          
-              <!-- Fetch selected filed on change -->
-              <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple"
-                accept="image/*" />
-            </div>
-        </mat-form-field>
+        <!-- Image Upload Field -->
+        <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" accept="image/*" />
+        <img [src]="game.imgPath" height="200" *ngIf="game.imgPath">
     </form>
     <button mat-raised-button (click)="updateGame()" color="primary">
         Atualizar
     </button>
-    
+
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
