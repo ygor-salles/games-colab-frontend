@@ -1,3 +1,4 @@
+import { HeaderService } from './../../template/header/header.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { GameService } from './../../../services/game.service';
 import { Game } from './../../../models/game.model';
@@ -17,9 +18,10 @@ export class GameReadComponent implements OnInit {
     statusTable: boolean
     myControl = new FormControl();
 
-    constructor(private gameService: GameService) { }
+    constructor(private gameService: GameService, private headerService: HeaderService) { }
 
     ngOnInit(): void {
+        if(this.username == null) this.displayedColumns.pop() 
         this.gameService.read().subscribe(games => {
             this.games = games
         })
@@ -31,9 +33,15 @@ export class GameReadComponent implements OnInit {
     }
 
     applyFilter(event: Event) {
+        if(this.username == null) this.displayedColumns.pop() 
         this.statusTable = false
         this.dataSource = new MatTableDataSource(this.games)
         const filterValue = (event.target as HTMLInputElement).value;
         this.dataSource.filter = filterValue.trim().toLowerCase();
     }
+
+    get username(): string {
+        return this.headerService.headerData.username
+    }
+
 }
