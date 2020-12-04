@@ -28,24 +28,14 @@
             </mat-select>
         </mat-form-field>
         <!-- Image Upload Field -->
-        <mat-form-field>
-            <div>
-              <mat-toolbar>
-                <!-- Display files names -->
-                <input matInput [(ngModel)]="fileAttr"  name="name" />
-              </mat-toolbar>
-          
-              <!-- Fetch selected filed on change -->
-              <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple"
-                accept="image/*" />
-            </div>
-        </mat-form-field>
+        <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" accept="image/*" />
+        <img [src]="game.imgPath" height="200" *ngIf="game.imgPath">
     </form>
     <button mat-raised-button (click)="createGame()" color="primary">
         Salvar
     </button>
 
-    <button mat-raised-button (click)="cancel()" color="warn">
+    <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
 </mat-card>

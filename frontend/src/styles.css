@@ -43,3 +43,11 @@ a {
 span, input {
     color: #ffffff !important;
 }
+
+.msg-error {
+    background-color: #ff595e;
+}
+
+.msg-success {
+    background-color: #8ac926;
+}
