@@ -28,7 +28,8 @@
             </mat-select>
         </mat-form-field>
         <!-- Image Upload Field -->
-        <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" accept="image/*" />
+        <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+            accept="image/*" />
         <img [src]="game.imgPath" height="200" *ngIf="game.imgPath">
     </form>
     <button mat-raised-button (click)="createGame()" color="primary">
