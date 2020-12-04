@@ -26,6 +26,7 @@
   padding: 2px 16px;
   overflow: scroll;
   max-height: 8em;
+  width: 100%;
 }
 
 .star-img {
