@@ -1,21 +1,41 @@
 <mat-card class="mat-elevation-z8">
-    <mat-card-title>Buscar jogo por titulo, desenvolvedor, console, gênero</mat-card-title>
     <form>
         <mat-form-field>
-            <mat-label>Filtro</mat-label>
-            <!--<input matInput (keyup)="applyFilter($event)" placeholder="Ex. Uncharted" #input>-->
+            <mat-label>Jogo</mat-label>
             <input type="text" placeholder="Ex. Uncharted" (keyup)="applyFilter($event)" matInput
-                [formControl]="myControl" [matAutocomplete]="auto" #input>
-            <mat-autocomplete #auto="matAutocomplete">
+                [formControl]="myControl" [matAutocomplete]="autoTitle" #input>
+            <mat-autocomplete #autoTitle="matAutocomplete">
                 <mat-option *ngFor="let game of games" [value]="game.title">
-                    {{game.title}}
+                    {{ game.title }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Desenvolvedor</mat-label>
+            <input type="text" placeholder="Ex. Naughty Dog" (keyup)="applyFilter($event)" matInput
+                [formControl]="myControl" [matAutocomplete]="autoDeveloper" #input>
+            <mat-autocomplete #autoDeveloper="matAutocomplete">
+                <mat-option *ngFor="let game of games" [value]="game.developer">
+                    {{ game.developer }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Gênero</mat-label>
+            <input type="text" placeholder="Ex. Ação" (keyup)="applyFilter($event)" matInput
+                [formControl]="myControl" [matAutocomplete]="autoGenre" #input>
+            <mat-autocomplete #autoGenre="matAutocomplete">
+                <mat-option *ngFor="let game of games" [value]="game.genre">
+                    {{ game.genre }}
                 </mat-option>
             </mat-autocomplete>
         </mat-form-field>
     </form>
 </mat-card>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" class="example-container">
 
     <table *ngIf="statusTable" mat-table [dataSource]="games" class="mat-elevation-z8">
 
@@ -25,7 +45,7 @@
             <td mat-cell *matCellDef="let row">
                 <a routerLink="/games/review/{{ row._id }}">
                     <div *ngIf="row.imgPath">
-                        <img src="{{row.imgPath}}" height="300" width="300" />
+                        <img src="{{row.imgPath}}" height="120" width="120" />
                     </div>
                     <div *ngIf="!row.imgPath">
                         Não há imagem cadastrada
@@ -71,7 +91,7 @@
         </ng-container>
 
         <!-- Action Column -->
-        <ng-container matColumnDef="action">
+        <ng-container *ngIf="username!=null" matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>Ações</th>
             <td mat-cell *matCellDef="let row">
                 <div *ngIf="user_id==row.user_id">
@@ -89,12 +109,12 @@
             </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
         <!-- Row shown when there is no matching data. -->
         <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="2">No data matching the filter "{{input.value}}"</td>
+            <td class="mat-cell">No data matching the filter "{{input.value}}"</td>
         </tr>
     </table>
 
@@ -105,7 +125,7 @@
             <th mat-header-cell *matHeaderCellDef> Capa </th>
             <td mat-cell *matCellDef="let row">
                 <a routerLink="/games/review/{{ row._id }}">
-                    <img src="{{row.imgPath}}" height="300" width="300" />
+                    <img src="{{row.imgPath}}" height="120" width="120" />
                 </a>
             </td>
         </ng-container>
@@ -147,7 +167,7 @@
         </ng-container>
 
         <!-- Action Column -->
-        <ng-container matColumnDef="action">
+        <ng-container *ngIf="username!=null" matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>Ações</th>
             <td mat-cell *matCellDef="let row">
                 <a routerLink="/games/update/{{ row._id }}" class="edit">
@@ -163,12 +183,12 @@
             </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
         <!-- Row shown when there is no matching data. -->
         <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="2">No data matching the filter "{{input.value}}"</td>
+            <td class="mat-cell">No data matching the filter "{{input.value}}"</td>
         </tr>
     </table>
 </div>

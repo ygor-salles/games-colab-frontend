@@ -64,7 +64,8 @@
 	font-size:15px;
 	padding:6px 15px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #444e83;
+  text-shadow:0px 1px 0px #444e83;
+  margin: 5px;
 }
 .butao:hover {
 	background-color:#5b6599;
