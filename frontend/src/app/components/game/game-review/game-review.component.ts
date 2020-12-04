@@ -48,9 +48,10 @@ export class ReviewReadComponent implements OnInit {
     insertReview(): void {
         this.review.rate = Number(this.review.rate);
         if (this.review.rate >= 0 && this.review.rate <= 10) {
-            this.reviewService.create(this.review).subscribe(() => {
+            this.reviewService.create(this.review).subscribe((): void => {
                 this.reviewService.showMessage("Avaliação salva com sucesso!");
                 this.router.navigate([`/games/review/${this.review.game_id}`]);
+                document.location.reload(true)
             });
         } else {
             this.reviewService.showMessage("Favor inserir uma nota entre 0 e 10");
