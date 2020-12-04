@@ -18,6 +18,7 @@ exports.create = (req, res) => {
         genre: req.body.genre,
         rating: req.body.rating,
         imgPath: req.body.imgPath,
+        user_id: req.body.user_id
     });
 
     // Save Game in the database
