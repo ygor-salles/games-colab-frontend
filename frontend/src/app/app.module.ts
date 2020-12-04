@@ -27,6 +27,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatAutocompleteModule } from '@angular/material/autocomplete'; 
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
 
 //Componentes Criados
 import { HeaderComponent } from './components/template/header/header.component';
@@ -46,13 +48,12 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
 import { UserReadComponent } from './components/user/user-read/user-read.component';
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
-import { LoginComponent } from './login/login/login.component';
-import { MatDividerModule } from '@angular/material/divider'; 
+import { LoginComponent } from './login/login/login.component'; 
+import { TopRatedComponent } from './views/top-rated/top-rated.component';
+import { ConsolesComponent } from './views/consoles/consoles.component';
 
 //Services globais
 import { AuthService } from './services/auth.service';
-import { TopRatedComponent } from './views/top-rated/top-rated.component';
-import { ConsolesComponent } from './views/consoles/consoles.component';
 
 registerLocaleData(localePt);
 
@@ -103,7 +104,8 @@ registerLocaleData(localePt);
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatDividerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTabsModule
   ],
   providers: [
     {

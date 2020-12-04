@@ -6,7 +6,7 @@ table {
     margin-right: 10px;
 }
 
-.edit > i {
+.edit>i {
     color: #06d6a0;
 }
 
@@ -14,10 +14,19 @@ table {
     margin-right: 10px;
 }
 
-.delete > i {
+.delete>i {
     color: #e35e6b;
 }
 
 td {
     width: calc(100%/6);
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.mat-card {
+    margin-bottom: 10px;
 }
