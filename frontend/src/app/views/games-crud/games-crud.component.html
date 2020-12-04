@@ -1,28 +1,5 @@
-<div class="contain">
-    <button mat-raised-button (click)="navigateToGameCreate()" color="primary">
-        Novo Jogo
-    </button>
-    
-    <mat-card>
-        <mat-card-title>Filtros</mat-card-title>
-        <form class="example-form">
-            <mat-form-field class="example-full-width">
-                <mat-label>Assignee</mat-label>
-                <input placeholder="Título do jogo" type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" color="primary">
-                <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                        {{option.title}} 
-                    </mat-option>
-                </mat-autocomplete>
-            </mat-form-field>
-        </form>
-    
-        <button mat-raised-button (click)="searchByFilters()" color="accent">
-            Filtrar
-        </button>
-    </mat-card>
-    
-    <mat-divider [inset]="true"></mat-divider>
-    
-    <app-game-read></app-game-read>
-</div>
+<button mat-raised-button (click)="navigateToGameCreate()" color="primary">
+    Novo Jogo
+</button>
+
+<app-game-read></app-game-read>
