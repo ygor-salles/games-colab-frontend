@@ -26,6 +26,10 @@ export class GameReadComponent implements OnInit {
         this.statusTable = true
     }
 
+    get user_id(): string {
+        return JSON.parse(localStorage.getItem('currentUser')).id
+    }
+
     openDialog(event: string) {
         this.gameService.openDialog(event)
     }

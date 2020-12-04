@@ -21,7 +21,7 @@ a {
 .button-in-title {
     margin: 0 !important;
     background-color: #ffffff;
-    color: black;
+    color: black !important;
 }
 
 .mat-focused .mat-form-field-label, .mat-form-field-infix {
@@ -40,14 +40,14 @@ a {
     caret-color: #ffffff !important;
 }
 
-span, input {
-    color: #ffffff !important;
+span:has(:not(.button-in-title)), input {
+    color: #ffffff;
 }
 
 .msg-error {
-    background-color: #ff595e;
+    background-color: #ff595e !important;
 }
 
 .msg-success {
-    background-color: #8ac926;
+    background-color: #8ac926 !important;
 }
