@@ -43,7 +43,6 @@ export class ReviewReadComponent implements OnInit {
             this.gameTitle = game.title
         })
         this.reviewService.read(this.review.game_id).subscribe(reviews => {
-            console.log(reviews)
             this.reviews = reviews
         })
     }
