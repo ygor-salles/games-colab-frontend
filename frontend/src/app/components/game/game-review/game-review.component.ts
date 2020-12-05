@@ -14,7 +14,7 @@ import { AppComponent } from 'src/app/app.component';
 
 export class ReviewReadComponent implements OnInit {
     gameTitle: string;
-    reviews: Review[];
+    reviews: Review[] = [];
     review: Review = {} as Review;
     displayedColumns = ['rate', 'comment'];
 
@@ -43,6 +43,7 @@ export class ReviewReadComponent implements OnInit {
             this.gameTitle = game.title
         })
         this.reviewService.read(this.review.game_id).subscribe(reviews => {
+            console.log(reviews)
             this.reviews = reviews
         })
     }
