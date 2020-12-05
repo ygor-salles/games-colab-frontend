@@ -11,7 +11,7 @@ import { HeaderService } from '../../template/header/header.service';
 export class UserReadComponent implements OnInit {
 
     users: User[]
-    displayedColumns = ['name', 'email']
+    displayedColumns = ['name', 'email', 'action']
 
     constructor(
         private userService: UserService,
@@ -22,8 +22,8 @@ export class UserReadComponent implements OnInit {
         this.userService.read().subscribe(users => this.users = users)
     }
 
-    get username(): string {
-        return this.headerService.headerData.username
+    get user_id(): string {
+        return JSON.parse(localStorage.getItem('currentUser')).id
     }
 
 }
