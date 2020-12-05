@@ -4,6 +4,7 @@ import { Review } from 'src/app/models/review.model';
 import { ReviewService } from 'src/app/services/review.service';
 import { GameService } from 'src/app/services/game.service';
 import { HeaderService } from '../../template/header/header.service';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
     selector: 'app-game-review',
@@ -22,7 +23,8 @@ export class ReviewReadComponent implements OnInit {
         private gameService: GameService,
         private router: Router,
         private route: ActivatedRoute,
-        private headerService: HeaderService
+        private headerService: HeaderService,
+        private appComponent: AppComponent
     ) {
         Object.assign(headerService.headerData, {
             title: 'Avaliação de Game',
@@ -31,8 +33,8 @@ export class ReviewReadComponent implements OnInit {
         })
     }
 
-    get username(): string {
-        return this.headerService.headerData.username
+    get user_id(): string {
+        return localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')).id : null
     }
 
     ngOnInit(): void {
@@ -51,7 +53,7 @@ export class ReviewReadComponent implements OnInit {
             this.reviewService.create(this.review).subscribe((): void => {
                 this.reviewService.showMessage("Avaliação salva com sucesso!");
                 this.router.navigate([`/games/review/${this.review.game_id}`]);
-                document.location.reload(true)
+                this.appComponent.redirectFromLoginToCurrent()
             });
         } else {
             this.reviewService.showMessage("Favor inserir uma nota entre 0 e 10");

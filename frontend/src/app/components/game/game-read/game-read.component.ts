@@ -29,7 +29,7 @@ export class GameReadComponent implements OnInit {
     }
 
     get user_id(): string {
-        return JSON.parse(localStorage.getItem('currentUser')).id
+        return localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')).id : null
     }
 
     openDialog(event: string) {

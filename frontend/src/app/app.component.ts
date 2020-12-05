@@ -19,4 +19,11 @@ export class AppComponent implements OnInit {
         this.router.navigate(['/']);
     });
   }
+  
+  redirectFromLoginToCurrent() {
+    const currentUrl = this.router.url
+    this.router.navigateByUrl('/login', { skipLocationChange: false }).then(() => {
+        this.router.navigate([currentUrl]);
+    });
+  }
 }

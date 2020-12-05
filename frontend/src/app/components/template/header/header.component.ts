@@ -44,11 +44,11 @@ export class HeaderComponent implements OnInit {
         localStorage.removeItem('currentUser')
         this.appComponent.redirectFromLoginToHome()
     }
-
+    
     sair(): void {
         this.headerService.headerData.username = null
         localStorage.removeItem('currentUser')
-        document.location.reload(true)
+        this.appComponent.redirectFromLoginToCurrent()
     }
 
 }
