@@ -23,6 +23,10 @@ export class GamesCrudComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    get user_id(): string {
+        return localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')).id : null
+    }
+
     navigateToGameCreate() {
         this.router.navigate(['/games/create'])
     }
