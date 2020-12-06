@@ -4,6 +4,7 @@ import { GameService } from './../../../services/game.service';
 import { Game } from './../../../models/game.model';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
     selector: 'app-game-read',
@@ -14,18 +15,71 @@ export class GameReadComponent implements OnInit {
 
     games: Game[]
     displayedColumns = ['imgPath', 'title', 'summary', 'developer', 'type', 'genre', 'action'];
+    filters = [
+        { type: 'filteredTitles', attribute: 'title', control: 'titlesControl' }, 
+        { type: 'filteredDevelopers', attribute: 'developer', control: 'developersControl' },
+        { type:'filteredGenres', attribute: 'genre', control: 'genresControl' }
+    ]
     dataSource: any
     statusTable: boolean
-    myControl = new FormControl();
+
+    titlesControl = new FormControl();
+    developersControl = new FormControl();
+    genresControl = new FormControl();
+
+    filteredDevelopers: any;
+    filteredTitles: any;
+    filteredGenres: any;
 
     constructor(private gameService: GameService, private headerService: HeaderService) { }
 
     ngOnInit(): void {
-        if(this.username == null) this.displayedColumns.pop() 
+        if (this.username == null) this.displayedColumns.pop()
         this.gameService.read().subscribe(games => {
             this.games = games
+            this.filters.map(filter => this._multiFilters(filter.type, filter.attribute, filter.control))
         })
         this.statusTable = true
+    }
+
+    displayTitles(game: Game): string {
+        return game && game.title ? game.title : '';
+    }
+
+    displayDevelopers(game: Game): string {
+        return game && game.developer ? game.developer : '';
+    }
+    
+    displayGenres(game: Game): string {
+        return game && game.genre ? game.genre : '';
+    }
+
+    private _filter(name: any, attribute: string): Game[] {
+        const filterValue = name.toLowerCase();
+        return this.games.filter(option => option[attribute].toLowerCase().indexOf(filterValue) === 0);
+    }
+
+    private _prepareValuesToFilter(): Game[] {
+        return this.games.filter((item, index, self) => index === self.findIndex(i => (i.genre === item.genre) ) );
+    }
+
+    private _multiFilters(filterType: string, filterAttribute: string, filterControl:string) {
+        this[filterType] = this[filterControl].valueChanges
+            .pipe(
+                startWith(''),
+                map(value => typeof value === 'string' ? value : value[filterAttribute]),
+                map(name => name ? this._filter(name, filterAttribute) : this._prepareValuesToFilter())
+            );
+    }
+
+    applyFilter(filter: string) {
+        this.statusTable = false
+        this.dataSource = new MatTableDataSource(this.games)
+        this.dataSource.filter = filter.trim().toLowerCase();
+    }
+
+    get username(): string {
+        return this.headerService.headerData.username
     }
 
     get user_id(): string {
@@ -35,17 +89,4 @@ export class GameReadComponent implements OnInit {
     openDialog(event: string) {
         this.gameService.openDialog(event)
     }
-
-    applyFilter(event: Event) {
-        if(this.username == null) this.displayedColumns.pop() 
-        this.statusTable = false
-        this.dataSource = new MatTableDataSource(this.games)
-        const filterValue = (event.target as HTMLInputElement).value;
-        this.dataSource.filter = filterValue.trim().toLowerCase();
-    }
-
-    get username(): string {
-        return this.headerService.headerData.username
-    }
-
 }

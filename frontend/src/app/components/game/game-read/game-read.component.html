@@ -1,37 +1,37 @@
 <mat-card class="mat-elevation-z8">
+    <mat-card-subtitle>Apenas será considerado o filtro onde você estiver digitando, ou seja, sem combinações.</mat-card-subtitle>
     <form>
-        <mat-form-field>
-            <mat-label>Jogo</mat-label>
-            <input type="text" placeholder="Ex. Uncharted" (keyup)="applyFilter($event)" matInput
-                [formControl]="myControl" [matAutocomplete]="autoTitle" #input>
-            <mat-autocomplete #autoTitle="matAutocomplete">
-                <mat-option *ngFor="let game of games" [value]="game.title">
-                    {{ game.title }}
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Título</mat-label>
+            <input type="text" placeholder="Ex. Uncharted" matInput [formControl]="titlesControl" [matAutocomplete]="autoTitle" (input)="applyFilter($event.target.value)">
+            <mat-autocomplete #autoTitle="matAutocomplete" [displayWith]="displayTitles">
+                <mat-option *ngFor="let game of filteredTitles | async" [value]="game" (click)="applyFilter($event.target.innerText)">
+                    {{game.title}}
                 </mat-option>
             </mat-autocomplete>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="example-full-width">
             <mat-label>Desenvolvedor</mat-label>
-            <input type="text" placeholder="Ex. Naughty Dog" (keyup)="applyFilter($event)" matInput
-                [formControl]="myControl" [matAutocomplete]="autoDeveloper" #input>
-            <mat-autocomplete #autoDeveloper="matAutocomplete">
-                <mat-option *ngFor="let game of games" [value]="game.developer">
+            <input type="text" placeholder="Ex. Naughty Dog" matInput [formControl]="developersControl" [matAutocomplete]="autoDeveloper" (input)="applyFilter($event.target.value)">
+            <mat-autocomplete #autoDeveloper="matAutocomplete" [displayWith]="displayDevelopers" >
+                <mat-option *ngFor="let game of filteredDevelopers | async" [value]="game" (click)="applyFilter($event.target.innerText)">
                     {{ game.developer }}
                 </mat-option>
             </mat-autocomplete>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="example-full-width">
             <mat-label>Gênero</mat-label>
-            <input type="text" placeholder="Ex. Ação" (keyup)="applyFilter($event)" matInput
-                [formControl]="myControl" [matAutocomplete]="autoGenre" #input>
-            <mat-autocomplete #autoGenre="matAutocomplete">
-                <mat-option *ngFor="let game of games" [value]="game.genre">
+            <input type="text" placeholder="Ex. Ação" matInput [formControl]="genresControl" [matAutocomplete]="autoGenre" (input)="applyFilter($event.target.value)">
+            <mat-autocomplete #autoGenre="matAutocomplete" [displayWith]="displayGenres" >
+                <mat-option *ngFor="let game of filteredGenres | async" [value]="game" (click)="applyFilter($event.target.innerText)">
                     {{ game.genre }}
                 </mat-option>
             </mat-autocomplete>
         </mat-form-field>
+
     </form>
 </mat-card>
 
@@ -114,7 +114,7 @@
 
         <!-- Row shown when there is no matching data. -->
         <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell">No data matching the filter "{{input.value}}"</td>
+            <td class="mat-cell">Nenhum resultado encontrado para o filtro</td>
         </tr>
     </table>
 
@@ -188,7 +188,7 @@
 
         <!-- Row shown when there is no matching data. -->
         <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell">No data matching the filter "{{input.value}}"</td>
+            <td class="mat-cell">Nenhum resultado encontrado para o filtro</td>
         </tr>
     </table>
 </div>
