@@ -32,7 +32,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 //Componentes Criados
 import { HeaderComponent } from './components/template/header/header.component';
-import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { GamesCrudComponent } from './views/games-crud/games-crud.component';
@@ -61,7 +60,6 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     NavComponent,
     HomeComponent,
     GamesCrudComponent,

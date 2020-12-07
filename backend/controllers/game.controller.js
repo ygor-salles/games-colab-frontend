@@ -3,10 +3,10 @@ const Game = db.game;
 
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body) {
+    if (!req.body.type || !req.body.title || !req.body.summary || !req.body.developer || !req.body.genre || !req.body.user_id) {
         return res
             .status(400)
-            .send({ message: "Campos obrigatórios não podem ser vazios!" });
+            .send({ message: "(*) Campos obrigatórios não podem ser vazios!" });
     }
 
     // Create a Game instance

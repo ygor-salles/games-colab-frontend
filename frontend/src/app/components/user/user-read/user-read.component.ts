@@ -19,7 +19,13 @@ export class UserReadComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        if (this.username == null) this.displayedColumns.pop()
+
         this.userService.read().subscribe(users => this.users = users)
+    }
+
+    get username(): string {
+        return this.headerService.headerData.username
     }
 
     get user_id(): string {

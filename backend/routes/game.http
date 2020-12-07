@@ -7,7 +7,7 @@ GET  http://localhost:3001/games?type=playstation HTTP/1.1
 ### SELECT Busca jogos mais avaliados por console
 GET  http://localhost:3001/games/most_rated/xbox HTTP/1.1
 
-### INSERT Registra jogo (campos obrigatórios)
+### INSERT Registra jogo ((*) Campos obrigatórios)
 POST  http://localhost:3001/games HTTP/1.1
 Content-Type: application/json
 

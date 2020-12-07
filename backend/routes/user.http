@@ -1,7 +1,7 @@
 ### SELECT Busca a informação de todos os usuários
 GET  http://localhost:3001/users/ HTTP/1.1
 
-### INSERT Registra usuário (campos obrigatórios)
+### INSERT Registra usuário ((*) Campos obrigatórios)
 POST  http://localhost:3001/users HTTP/1.1
 Content-Type: application/json
 

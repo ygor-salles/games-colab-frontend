@@ -16,7 +16,7 @@ export class ReviewReadComponent implements OnInit {
     gameTitle: string;
     reviews: Review[] = [];
     review: Review = {} as Review;
-    displayedColumns = ['rate', 'comment'];
+    displayedColumns = ['rate', 'comment', 'action'];
 
     constructor(
         private reviewService: ReviewService,
@@ -49,6 +49,7 @@ export class ReviewReadComponent implements OnInit {
 
     insertReview(): void {
         this.review.rate = Number(this.review.rate);
+        this.review.user_id = this.user_id;
         if (this.review.rate >= 0 && this.review.rate <= 10) {
             this.reviewService.create(this.review).subscribe((): void => {
                 this.reviewService.showMessage("Avaliação salva com sucesso!");
@@ -60,6 +61,13 @@ export class ReviewReadComponent implements OnInit {
         }
     }
 
+    deleteReview(id: string): void {
+        this.reviewService.delete(id).subscribe(() => {
+            this.reviewService.showMessage('Avaliação deletada com sucesso!')
+            this.router.navigate([`/games/review/${this.review.game_id}`]);
+            this.appComponent.redirectFromLoginToCurrent()
+        })
+    }
     checkInput(e: KeyboardEvent) {
         if ([46, 8, 9, 27, 13, 110, 190].indexOf(e.keyCode) !== -1 ||
             (e.key === 'a' && e.ctrlKey === true) ||

@@ -14,3 +14,12 @@ table {
 .delete > i {
     color: #e35e6b;
 }
+
+
+td:first-child:nth-last-child(3) {
+    width: calc(100%/3);
+}
+
+td:first-child:nth-last-child(2) {
+    width: calc(100%/2);
+}

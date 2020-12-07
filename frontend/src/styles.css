@@ -12,6 +12,7 @@ body {
 a {
     color: #ffffff;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .card-with-button {
@@ -50,4 +51,8 @@ span:has(:not(.button-in-title)), input {
 
 .msg-success {
     background-color: #8ac926 !important;
+}
+
+.mat-toolbar.header {
+    padding: 0 16px 0 270px;
 }

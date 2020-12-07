@@ -41,3 +41,9 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 </div>
+
+<div *ngIf="users.length == 0">
+    <mat-card>
+            Ainda não há usuários cadastrados!
+    </mat-card>
+</div>

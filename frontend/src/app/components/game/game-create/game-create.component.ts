@@ -42,10 +42,12 @@ export class GameCreateComponent implements OnInit {
                 let image = new Image();
                 image.src = e.target.result;
                 image.onload = rs => {
+                    console.log();
                     const imgBase64Path = e.target.result;
                     this.game.imgPath = imgBase64Path
                 };
             };
+            console.log(imgFile.target);
             reader.readAsDataURL(imgFile.target.files[0]);
         }
     }

@@ -15,6 +15,11 @@ module.exports = (mongoose) => {
             ref: 'games',
             required: true
         },
+        user_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'users',
+            required: true
+        },
         __v: {
             type: Number,
             select: false

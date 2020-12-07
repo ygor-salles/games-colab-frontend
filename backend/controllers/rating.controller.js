@@ -4,10 +4,10 @@ const Game = db.game;
 
 exports.create = async (req, res) => {
     // Validate request
-    if (!req.body.rate || !req.body.comment || !req.body.game_id) {
+    if (!('rate' in req.body) || !req.body.comment || !req.body.game_id || !req.body.user_id) {
         res
             .status(400)
-            .send({ message: "Campos obrigatórios não podem ser vazios!" });
+            .send({ message: "(*) Campos obrigatórios não podem ser vazios!" });
             return;
         }
 
@@ -15,7 +15,8 @@ exports.create = async (req, res) => {
     const rating = new Rating({
         rate: req.body.rate,
         comment: req.body.comment,
-        game_id: req.body.game_id
+        game_id: req.body.game_id,
+        user_id: req.body.user_id
     });
 
     await updateRating({ rating: req.body.rate, game_id: rating.game_id });
@@ -148,7 +149,7 @@ async function updateRating({ rating, game_id } = {}) {
     Game
         .findById(game_id)
         .then(async data => {
-            const newRatingGame = (data.rating+rating) / 2;
+            const newRatingGame = ((data.rating+rating) / 2).toFixed(2);
             await Game.findByIdAndUpdate(game_id, { rating: newRatingGame })
         });
 }

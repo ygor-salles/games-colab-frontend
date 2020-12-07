@@ -1,7 +1,7 @@
 <mat-card class="details-game">
     <mat-card-title class="card-with-button">Você está visualizando o jogo "{{gameTitle}}"</mat-card-title>
     <button class="button-in-title" mat-raised-button (click)="backToGames()" color="basic">
-        Voltar para lista de jogos
+        Ver lista de jogos
     </button>
 </mat-card>
 
@@ -20,7 +20,21 @@
             <!-- Comment Column -->
             <ng-container matColumnDef="comment">
                 <th mat-header-cell *matHeaderCellDef>Comentário</th>
-                <td mat-cell *matCellDef="let row">{{row.comment}}</td>
+                <td mat-cell *matCellDef="let row">{{row.comment}}</td>{{user_id}}
+            </ng-container>
+
+             <!-- Action Column -->
+            <ng-container *ngIf="user_id!=null" matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Ações</th>
+                <td mat-cell *matCellDef="let row">
+                    <div *ngIf="user_id==row.user_id">
+                        <a (click)="deleteReview(row._id)" class="delete">
+                            <i class="material-icons">
+                                delete
+                            </i>
+                        </a>
+                    </div>
+                </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -55,6 +69,6 @@
         Enviar
     </button>
     <button mat-raised-button (click)="backToGames()">
-        Voltar para lista de jogos
+        Ver lista de jogos
     </button>
 </mat-card>
