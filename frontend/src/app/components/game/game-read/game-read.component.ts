@@ -22,7 +22,6 @@ export class GameReadComponent implements OnInit {
     ]
     dataSource: any
     statusTable: boolean
-    colspan: number
 
     titlesControl = new FormControl();
     developersControl = new FormControl();
@@ -35,12 +34,7 @@ export class GameReadComponent implements OnInit {
     constructor(private gameService: GameService, private headerService: HeaderService) { }
 
     ngOnInit(): void {
-        if (this.username == null) {
-            this.displayedColumns.pop()
-            this.colspan = 7
-        } else {
-            this.colspan = 8
-        }
+        if (this.username == null) this.displayedColumns.pop()
         this.gameService.read().subscribe(games => {
             this.games = games
             this.filters.map(filter => this._multiFilters(filter.type, filter.attribute, filter.control))

@@ -148,7 +148,7 @@ async function updateRating({ rating, game_id } = {}) {
     Game
         .findById(game_id)
         .then(async data => {
-            const newRatingGame = (data.rating+rating) / 2;
+            const newRatingGame = ((data.rating+rating) / 2).toFixed(2);
             await Game.findByIdAndUpdate(game_id, { rating: newRatingGame })
         });
 }

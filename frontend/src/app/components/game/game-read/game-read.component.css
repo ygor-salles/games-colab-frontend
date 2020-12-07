@@ -32,8 +32,12 @@ table {
     color: #e35e6b;
 }
 
-td {
+td:first-child:nth-last-child(7) {
     width: calc(100%/6);
+}
+
+td:first-child:nth-last-child(8) {
+    width: calc(100%/7);
 }
 
 .mat-form-field {
@@ -43,4 +47,8 @@ td {
 
 .mat-card {
     margin-bottom: 10px;
+}
+
+.not-found {
+    text-align: center;
 }
