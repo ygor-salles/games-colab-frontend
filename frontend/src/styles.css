@@ -12,6 +12,7 @@ body {
 a {
     color: #ffffff;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .card-with-button {
