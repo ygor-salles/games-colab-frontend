@@ -4,7 +4,7 @@ const Game = db.game;
 
 exports.create = async (req, res) => {
     // Validate request
-    if (!req.body.rate || !req.body.comment || !req.body.game_id || !req.body.user_id) {
+    if (!('rate' in req.body) || !req.body.comment || !req.body.game_id || !req.body.user_id) {
         res
             .status(400)
             .send({ message: "(*) Campos obrigatórios não podem ser vazios!" });
