@@ -75,6 +75,7 @@ export class GameReadComponent implements OnInit {
     }
 
     applyFilter(filter: string) {
+        console.log("filter");
         this.statusTable = false
         this.dataSource = new MatTableDataSource(this.games)
         this.dataSource.filter = filter.trim().toLowerCase();

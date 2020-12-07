@@ -4,7 +4,7 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>Título</mat-label>
-            <input type="text" placeholder="Ex. Uncharted" matInput [formControl]="titlesControl" [matAutocomplete]="autoTitle" (input)="applyFilter($event.target.value)">
+            <input type="text" placeholder="Ex. Uncharted" matInput [formControl]="titlesControl" [matAutocomplete]="autoTitle" (input)="applyFilter($event.target.value)" (keyup.enter)="applyFilter($event.target.value)">
             <mat-autocomplete #autoTitle="matAutocomplete" [displayWith]="displayTitles">
                 <mat-option *ngFor="let game of filteredTitles | async" [value]="game" (click)="applyFilter($event.target.innerText)">
                     {{game.title}}
@@ -14,7 +14,7 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>Desenvolvedor</mat-label>
-            <input type="text" placeholder="Ex. Naughty Dog" matInput [formControl]="developersControl" [matAutocomplete]="autoDeveloper" (input)="applyFilter($event.target.value)">
+            <input type="text" placeholder="Ex. Naughty Dog" matInput [formControl]="developersControl" [matAutocomplete]="autoDeveloper" (input)="applyFilter($event.target.value)" (keyup.enter)="applyFilter($event.target.value)">
             <mat-autocomplete #autoDeveloper="matAutocomplete" [displayWith]="displayDevelopers" >
                 <mat-option *ngFor="let game of filteredDevelopers | async" [value]="game" (click)="applyFilter($event.target.innerText)">
                     {{ game.developer }}
@@ -24,7 +24,7 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>Gênero</mat-label>
-            <input type="text" placeholder="Ex. Ação" matInput [formControl]="genresControl" [matAutocomplete]="autoGenre" (input)="applyFilter($event.target.value)">
+            <input type="text" placeholder="Ex. Ação" matInput [formControl]="genresControl" [matAutocomplete]="autoGenre" (input)="applyFilter($event.target.value)" (keyup.enter)="applyFilter($event.target.value)">
             <mat-autocomplete #autoGenre="matAutocomplete" [displayWith]="displayGenres" >
                 <mat-option *ngFor="let game of filteredGenres | async" [value]="game" (click)="applyFilter($event.target.innerText)">
                     {{ game.genre }}
