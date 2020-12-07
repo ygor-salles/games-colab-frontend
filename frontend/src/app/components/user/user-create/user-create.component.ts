@@ -36,7 +36,7 @@ export class UserCreateComponent implements OnInit {
       })
     }
     else{
-      this.userService.showMessage('As senhas dos campos devem ser iguais')
+      this.userService.showMessage('As senhas dos campos devem ser iguais', true)
     }
   }
 

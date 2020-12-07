@@ -60,10 +60,12 @@ exports.findOne = (req, res) => {
 
 exports.findAll = (req, res) => {
     const type = req.query.type;
-    let condition = type ? { type: type } : {};
+    let condition = type ? { type: type,$sort: { rating: -1 } } : {$sort: { rating: -1 },};
 
     Game
-        .find(condition)
+        .aggregate([
+            condition
+        ])
         .then((data) => {
             res
                 .status(200)

@@ -85,7 +85,9 @@ export class GameService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage("Ocorreu um erro!", true);
-    return EMPTY;
+    let message = 'Ocorreu um erro!'
+    if (e.error.message) message = e.error.message
+    this.showMessage(message, true)
+    return EMPTY
   }
 }
