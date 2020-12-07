@@ -16,3 +16,10 @@
     background-color: #FFF;
     color: black;
 }
+
+.footer {
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
