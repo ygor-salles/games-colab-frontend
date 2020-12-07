@@ -2,12 +2,9 @@
 
 Será implementado, utilizando a MEAN Stack (Mongo, Express, Angular e Node), um sistema colaborativo para cadastramento, avaliação e consulta de jogos.
 
-----------
-
-## Progresso atual
-
-Dois CRUDS implementados para uma aplicação ![AngularMaterial](https://material.angular.io/components/categories), conectando com o backend.
-
+Usamos do ![AngularMaterial](https://material.angular.io/components/categories) para estilização do frontend.
+O Banco de dado MongoDB se encontra hospedado em nuvem. Isso é possível dado o tier *free* do Mongo Atlas.
+![alt](../assets/gamescolabmongo.gif)
 
 ----------
 

@@ -13,7 +13,7 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class GameReadComponent implements OnInit {
 
-    games: Game[]
+    games: Game[] = []
     displayedColumns = ['imgPath', 'title', 'summary', 'developer', 'type', 'genre', 'rating', 'action'];
     filters = [
         { type: 'filteredTitles', attribute: 'title', control: 'titlesControl' }, 
@@ -30,6 +30,7 @@ export class GameReadComponent implements OnInit {
     filteredDevelopers: any;
     filteredTitles: any;
     filteredGenres: any;
+    newFilters = []
 
     constructor(private gameService: GameService, private headerService: HeaderService) { }
 
@@ -56,11 +57,12 @@ export class GameReadComponent implements OnInit {
 
     private _filter(name: any, attribute: string): Game[] {
         const filterValue = name.toLowerCase();
-        return this.games.filter(option => option[attribute].toLowerCase().indexOf(filterValue) === 0);
+        return this.newFilters.filter(option => option[attribute].toLowerCase().indexOf(filterValue) === 0);
     }
 
-    private _prepareValuesToFilter(): Game[] {
-        return this.games.filter((item, index, self) => index === self.findIndex(i => (i.genre === item.genre) ) );
+    private _prepareValuesToFilter(attribute: string): Game[] {
+        this.newFilters = this.games.filter((item, index, self) => index === self.findIndex(i => (i[attribute] === item[attribute]) ) );
+        return this.newFilters;
     }
 
     private _multiFilters(filterType: string, filterAttribute: string, filterControl:string) {
@@ -68,7 +70,7 @@ export class GameReadComponent implements OnInit {
             .pipe(
                 startWith(''),
                 map(value => typeof value === 'string' ? value : value[filterAttribute]),
-                map(name => name ? this._filter(name, filterAttribute) : this._prepareValuesToFilter())
+                map(name => name ? this._filter(name, filterAttribute) : this._prepareValuesToFilter(filterAttribute))
             );
     }
 
