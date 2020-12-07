@@ -90,6 +90,12 @@
             <td mat-cell *matCellDef="let row">{{ row.type }}</td>
         </ng-container>
 
+        <!-- Console Rating Column -->
+        <ng-container matColumnDef="rating">
+            <th mat-header-cell *matHeaderCellDef>Rating</th>
+            <td mat-cell *matCellDef="let row">{{ row.rating }}</td>
+        </ng-container>
+
         <!-- Action Column -->
         <ng-container *ngIf="username!=null" matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>Ações</th>
@@ -164,6 +170,12 @@
         <ng-container matColumnDef="type">
             <th mat-header-cell *matHeaderCellDef>Console</th>
             <td mat-cell *matCellDef="let row">{{ row.type }}</td>
+        </ng-container>
+
+        <!-- Console Rating Column -->
+        <ng-container matColumnDef="rating">
+            <th mat-header-cell *matHeaderCellDef>Rating</th>
+            <td mat-cell *matCellDef="let row">{{ row.rating }}</td>
         </ng-container>
 
         <!-- Action Column -->
