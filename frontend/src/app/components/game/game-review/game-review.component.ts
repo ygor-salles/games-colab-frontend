@@ -56,7 +56,7 @@ export class ReviewReadComponent implements OnInit {
                 this.appComponent.redirectFromLoginToCurrent()
             });
         } else {
-            this.reviewService.showMessage("Favor inserir uma nota entre 0 e 10");
+            this.reviewService.showMessage("Favor inserir uma nota entre 0 e 10", true);
         }
     }
 

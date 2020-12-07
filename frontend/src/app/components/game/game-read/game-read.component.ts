@@ -14,7 +14,7 @@ import { map, startWith } from 'rxjs/operators';
 export class GameReadComponent implements OnInit {
 
     games: Game[]
-    displayedColumns = ['imgPath', 'title', 'summary', 'developer', 'type', 'genre', 'action'];
+    displayedColumns = ['imgPath', 'title', 'summary', 'developer', 'type', 'genre', 'rating', 'action'];
     filters = [
         { type: 'filteredTitles', attribute: 'title', control: 'titlesControl' }, 
         { type: 'filteredDevelopers', attribute: 'developer', control: 'developersControl' },
