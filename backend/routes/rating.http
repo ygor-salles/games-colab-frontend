@@ -7,7 +7,7 @@ GET  http://localhost:3001/ratings/:rating_id HTTP/1.1
 ### SELECT Busca reviews para um jogo
 GET  http://localhost:3001/ratings?game_id=5fc2e86e9ab508004976383b HTTP/1.1
 
-### INSERT Registra review (campos obrigatórios)
+### INSERT Registra review ((*) Campos obrigatórios)
 POST  http://localhost:3001/ratings HTTP/1.1
 Content-Type: application/json
 

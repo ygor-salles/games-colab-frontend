@@ -4,7 +4,7 @@ const User = db.user;
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.name || !req.body.email || !req.body.password) {
-        res.status(400).send({ message: "Campos obrigatórios não podem ser vazios!" });
+        res.status(400).send({ message: "(*) Campos obrigatórios não podem ser vazios!" });
         return;
     }
 

@@ -7,7 +7,7 @@ exports.create = async (req, res) => {
     if (!req.body.rate || !req.body.comment || !req.body.game_id) {
         res
             .status(400)
-            .send({ message: "Campos obrigatórios não podem ser vazios!" });
+            .send({ message: "(*) Campos obrigatórios não podem ser vazios!" });
             return;
         }
 
