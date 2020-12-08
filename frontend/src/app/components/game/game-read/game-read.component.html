@@ -41,7 +41,7 @@
 
         <!-- Image Column -->
         <ng-container matColumnDef="imgPath">
-            <th mat-header-cell *matHeaderCellDef> Capa </th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef> Capa </th>
             <td mat-cell *matCellDef="let row">
                 <a routerLink="/games/review/{{ row._id }}">
                     <div *ngIf="row.imgPath">
@@ -56,7 +56,7 @@
 
         <!-- Title Column -->
         <ng-container matColumnDef="title">
-            <th mat-header-cell *matHeaderCellDef>Titulo</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Titulo</th>
             <td mat-cell *matCellDef="let row">
                 <a routerLink="/games/review/{{ row._id }}">
                     {{row.title}}
@@ -66,7 +66,7 @@
 
         <!-- Summary Column -->
         <ng-container matColumnDef="summary">
-            <th mat-header-cell *matHeaderCellDef>Resumo</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Resumo</th>
             <td mat-cell *matCellDef="let row" (click)="openDialog(row.summary)">
                 <a style="cursor:pointer; color: rgb(72, 153, 247);">Ver resumo</a>
             </td>
@@ -74,31 +74,31 @@
 
         <!-- Developer Column -->
         <ng-container matColumnDef="developer">
-            <th mat-header-cell *matHeaderCellDef>Desenvolvedor</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Desenvolvedor</th>
             <td mat-cell *matCellDef="let row">{{ row.developer }}</td>
         </ng-container>
 
         <!-- Genre Column -->
         <ng-container matColumnDef="genre">
-            <th mat-header-cell *matHeaderCellDef>Gênero</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Gênero</th>
             <td mat-cell *matCellDef="let row">{{ row.genre }}</td>
         </ng-container>
 
         <!-- Console Type Column -->
         <ng-container matColumnDef="type">
-            <th mat-header-cell *matHeaderCellDef>Console</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Console</th>
             <td mat-cell *matCellDef="let row">{{ row.type }}</td>
         </ng-container>
 
         <!-- Console Rating Column -->
         <ng-container matColumnDef="rating">
-            <th mat-header-cell *matHeaderCellDef>Rating</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Rating</th>
             <td mat-cell *matCellDef="let row">{{ row.rating }}</td>
         </ng-container>
 
         <!-- Action Column -->
         <ng-container *ngIf="username!=null" matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Ações</th>
             <td mat-cell *matCellDef="let row">
                 <div *ngIf="user_id==row.user_id">
                     <a routerLink="/games/update/{{ row._id }}" class="edit">
@@ -128,7 +128,7 @@
 
         <!-- Image Column -->
         <ng-container matColumnDef="imgPath">
-            <th mat-header-cell *matHeaderCellDef> Capa </th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef> Capa </th>
             <td mat-cell *matCellDef="let row">
                 <a routerLink="/games/review/{{ row._id }}">
                     <img src="{{row.imgPath}}" height="120" width="120" />
@@ -138,7 +138,7 @@
 
         <!-- Title Column -->
         <ng-container matColumnDef="title">
-            <th mat-header-cell *matHeaderCellDef>Titulo</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Titulo</th>
             <td mat-cell *matCellDef="let row">
                 <a routerLink="/games/review/{{ row._id }}">
                     {{row.title}}
@@ -148,7 +148,7 @@
 
         <!-- Summary Column -->
         <ng-container matColumnDef="summary">
-            <th mat-header-cell *matHeaderCellDef>Resumo</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Resumo</th>
             <td mat-cell *matCellDef="let row" (click)="openDialog(row.summary)">
                 <a style="cursor:pointer; color: rgb(72, 153, 247);">Ver resumo</a>
             </td>
@@ -156,7 +156,7 @@
 
         <!-- Developer Column -->
         <ng-container matColumnDef="developer">
-            <th mat-header-cell *matHeaderCellDef>Desenvolvedor</th>
+            <th style="text-align: center; margin: 1%;" mat-header-cell *matHeaderCellDef>Desenvolvedor</th>
             <td mat-cell *matCellDef="let row">{{ row.developer }}</td>
         </ng-container>
 
