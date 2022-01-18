@@ -1,27 +1,43 @@
-# Frontend
+<h4 align="center">
+    :computer: Sistema colaborativo para cadastro de games, consoles e hates de games.
+</h4>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
+<p align="center">
+    <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#user-content-clipboard-instruções">Instruções</a></p>
 
-## Development server
+<img alt="Interface" src="./assets/device-games-colab.png" width="100%" align="center">
+<br/>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 💻 Projeto
 
-## Code scaffolding
+Frontend App em Angular. Aplicação frontend para cadastro de games, consoles e hates de games. Onde após feito o cadastro do usuário é possível colaborar no cadastro de novos games, realizar comentários e dar avaliações sobre os games.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br>
 
-## Build
+## :rocket: Tecnologias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- [Angular](https://angular.io/) 
+- [Material](https://material.angular.io/)
+- [Typescript](https://www.typescriptlang.org/)
+- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/HTML5)
+- [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 
-## Running unit tests
+## :clipboard: Instruções
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+----
+### INTERFACE - FRONTEND
 
-## Running end-to-end tests
+- Execute `$ yarn` para instalar todas as dependencias.
+- Após todas as dependencias serem instaladas e as variáveis serem preenchidas, basta executar  `yarn start` para iniciar a interface frontend.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+----
+### Ajustes e melhorias
 
-## Further help
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [ ] Inserir loading nas telas 
+- [ ] Melhorar exibição da tabela de jogos
+- [ ] Validar cálculo da média de avaliações
+- [ ] Inserir paginação na tabela de jogos
